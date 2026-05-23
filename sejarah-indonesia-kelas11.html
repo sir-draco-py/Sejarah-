@@ -1,0 +1,1930 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sejarah Indonesia Kelas 11 — Rangkuman UAS</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Source+Serif+4:ital,wght@0,300;0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0f0e0c;
+    --surface: #1a1814;
+    --surface2: #231f1a;
+    --border: #2e2920;
+    --gold: #c9a84c;
+    --gold-light: #e8c96d;
+    --gold-dim: #7a6330;
+    --red: #c44a3a;
+    --cream: #f0e8d5;
+    --cream-dim: #b8a888;
+    --text: #e8dcc8;
+    --text-dim: #8a7d68;
+    --accent-blue: #4a8fa8;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Source Serif 4', Georgia, serif;
+    font-size: 16px;
+    line-height: 1.8;
+    min-height: 100vh;
+  }
+
+  /* NOISE TEXTURE OVERLAY */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 1000;
+  }
+
+  /* SIDEBAR */
+  #sidebar {
+    position: fixed;
+    left: 0; top: 0; bottom: 0;
+    width: 280px;
+    background: var(--surface);
+    border-right: 1px solid var(--border);
+    overflow-y: auto;
+    z-index: 100;
+    transition: transform 0.3s ease;
+  }
+
+  #sidebar::-webkit-scrollbar { width: 4px; }
+  #sidebar::-webkit-scrollbar-track { background: transparent; }
+  #sidebar::-webkit-scrollbar-thumb { background: var(--border); border-radius: 2px; }
+
+  .sidebar-header {
+    padding: 28px 24px 20px;
+    border-bottom: 1px solid var(--border);
+    position: sticky;
+    top: 0;
+    background: var(--surface);
+    z-index: 10;
+  }
+
+  .sidebar-header .label {
+    font-size: 10px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--gold);
+    font-family: 'Source Serif 4', serif;
+    font-weight: 600;
+    margin-bottom: 6px;
+  }
+
+  .sidebar-header h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--cream);
+    line-height: 1.3;
+  }
+
+  .nav-section {
+    padding: 8px 0;
+  }
+
+  .nav-chapter {
+    padding: 6px 24px;
+  }
+
+  .nav-chapter-btn {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    cursor: pointer;
+    padding: 8px 0;
+    border: none;
+    background: none;
+    color: var(--text-dim);
+    font-family: 'Source Serif 4', serif;
+    font-size: 12.5px;
+    line-height: 1.4;
+    text-align: left;
+    width: 100%;
+    transition: color 0.2s;
+  }
+
+  .nav-chapter-btn:hover { color: var(--cream); }
+  .nav-chapter-btn.active { color: var(--gold-light); }
+
+  .nav-chapter-btn .num {
+    font-family: 'Playfair Display', serif;
+    font-size: 13px;
+    color: var(--gold-dim);
+    min-width: 20px;
+    font-weight: 700;
+    margin-top: 1px;
+  }
+
+  .nav-chapter-btn.active .num { color: var(--gold); }
+
+  .nav-sub {
+    padding-left: 30px;
+    display: none;
+  }
+
+  .nav-sub.open { display: block; }
+
+  .nav-sub-item {
+    display: block;
+    padding: 5px 0;
+    font-size: 11.5px;
+    color: var(--text-dim);
+    cursor: pointer;
+    border: none;
+    background: none;
+    font-family: 'Source Serif 4', serif;
+    text-align: left;
+    width: 100%;
+    transition: color 0.2s;
+  }
+
+  .nav-sub-item:hover { color: var(--gold-light); }
+  .nav-sub-item.active { color: var(--gold); }
+
+  /* MAIN CONTENT */
+  #main {
+    margin-left: 280px;
+    min-height: 100vh;
+  }
+
+  /* HERO */
+  #hero {
+    padding: 80px 64px 60px;
+    border-bottom: 1px solid var(--border);
+    position: relative;
+    overflow: hidden;
+  }
+
+  #hero::before {
+    content: '';
+    position: absolute;
+    top: -100px; right: -100px;
+    width: 500px; height: 500px;
+    background: radial-gradient(circle, rgba(201,168,76,0.06) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .hero-label {
+    font-size: 10px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--gold);
+    font-weight: 600;
+    margin-bottom: 16px;
+    display: block;
+  }
+
+  #hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(36px, 5vw, 56px);
+    font-weight: 900;
+    line-height: 1.1;
+    color: var(--cream);
+    margin-bottom: 20px;
+  }
+
+  #hero h1 em {
+    font-style: italic;
+    color: var(--gold-light);
+  }
+
+  #hero p {
+    font-size: 16px;
+    color: var(--text-dim);
+    max-width: 600px;
+    font-style: italic;
+  }
+
+  .hero-meta {
+    margin-top: 28px;
+    display: flex;
+    gap: 24px;
+    flex-wrap: wrap;
+  }
+
+  .hero-badge {
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 8px 16px;
+    font-size: 12px;
+    color: var(--cream-dim);
+  }
+
+  .hero-badge span { color: var(--gold); font-weight: 600; }
+
+  /* CONTENT AREA */
+  #content {
+    padding: 0;
+  }
+
+  /* CHAPTER */
+  .chapter {
+    display: none;
+    animation: fadeIn 0.4s ease;
+  }
+
+  .chapter.active { display: block; }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(12px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .chapter-hero {
+    padding: 52px 64px 40px;
+    border-bottom: 1px solid var(--border);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .chapter-hero::after {
+    content: attr(data-num);
+    position: absolute;
+    right: 40px;
+    top: 20px;
+    font-family: 'Playfair Display', serif;
+    font-size: 120px;
+    font-weight: 900;
+    color: rgba(201,168,76,0.05);
+    line-height: 1;
+    pointer-events: none;
+    user-select: none;
+  }
+
+  .chapter-label {
+    font-size: 10px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--gold);
+    font-weight: 600;
+    margin-bottom: 12px;
+    display: block;
+  }
+
+  .chapter-hero h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(28px, 4vw, 42px);
+    font-weight: 900;
+    color: var(--cream);
+    line-height: 1.15;
+    max-width: 700px;
+  }
+
+  .chapter-intro {
+    margin-top: 16px;
+    font-size: 15px;
+    color: var(--text-dim);
+    max-width: 680px;
+    font-style: italic;
+  }
+
+  .chapter-body {
+    padding: 48px 64px 80px;
+  }
+
+  /* SECTIONS */
+  .section {
+    margin-bottom: 56px;
+    scroll-margin-top: 24px;
+  }
+
+  .section h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--gold-light);
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .section h3::before {
+    content: '';
+    display: inline-block;
+    width: 4px;
+    height: 20px;
+    background: var(--gold);
+    border-radius: 2px;
+    flex-shrink: 0;
+  }
+
+  .section h4 {
+    font-family: 'Playfair Display', serif;
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--cream);
+    margin: 28px 0 12px;
+  }
+
+  .section p {
+    margin-bottom: 14px;
+    font-size: 15.5px;
+    color: var(--text);
+    max-width: 760px;
+  }
+
+  /* HIGHLIGHT BOX */
+  .box {
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--gold);
+    border-radius: 0 6px 6px 0;
+    padding: 20px 24px;
+    margin: 24px 0;
+    max-width: 760px;
+  }
+
+  .box.red { border-left-color: var(--red); }
+  .box.blue { border-left-color: var(--accent-blue); }
+
+  .box-title {
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--gold);
+    font-weight: 600;
+    margin-bottom: 10px;
+  }
+
+  .box.red .box-title { color: var(--red); }
+  .box.blue .box-title { color: var(--accent-blue); }
+
+  .box p { font-size: 14.5px; margin-bottom: 8px; }
+  .box p:last-child { margin-bottom: 0; }
+
+  /* TIMELINE */
+  .timeline {
+    margin: 24px 0;
+    max-width: 760px;
+  }
+
+  .timeline-item {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 20px;
+    position: relative;
+  }
+
+  .timeline-item::before {
+    content: '';
+    position: absolute;
+    left: 48px;
+    top: 28px;
+    bottom: -20px;
+    width: 1px;
+    background: var(--border);
+  }
+
+  .timeline-item:last-child::before { display: none; }
+
+  .timeline-year {
+    min-width: 64px;
+    font-family: 'Playfair Display', serif;
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--gold);
+    padding-top: 3px;
+    text-align: right;
+  }
+
+  .timeline-dot {
+    width: 12px;
+    height: 12px;
+    background: var(--gold);
+    border-radius: 50%;
+    margin-top: 5px;
+    flex-shrink: 0;
+    box-shadow: 0 0 8px rgba(201,168,76,0.4);
+  }
+
+  .timeline-content {
+    flex: 1;
+  }
+
+  .timeline-content strong {
+    display: block;
+    font-size: 14px;
+    color: var(--cream);
+    margin-bottom: 4px;
+  }
+
+  .timeline-content p {
+    font-size: 14px;
+    color: var(--text-dim);
+    margin: 0;
+  }
+
+  /* TABLE */
+  .table-wrap {
+    overflow-x: auto;
+    margin: 24px 0;
+    max-width: 760px;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+  }
+
+  thead tr {
+    background: var(--surface2);
+    border-bottom: 2px solid var(--gold-dim);
+  }
+
+  th {
+    padding: 12px 16px;
+    text-align: left;
+    font-family: 'Source Serif 4', serif;
+    font-weight: 600;
+    color: var(--gold-light);
+    font-size: 12px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+
+  td {
+    padding: 11px 16px;
+    border-bottom: 1px solid var(--border);
+    color: var(--text);
+    vertical-align: top;
+  }
+
+  tr:hover td { background: rgba(201,168,76,0.03); }
+
+  /* LIST */
+  .styled-list {
+    list-style: none;
+    margin: 12px 0 20px;
+    max-width: 760px;
+  }
+
+  .styled-list li {
+    padding: 6px 0 6px 20px;
+    position: relative;
+    font-size: 15px;
+    color: var(--text);
+  }
+
+  .styled-list li::before {
+    content: '▸';
+    position: absolute;
+    left: 0;
+    color: var(--gold);
+    font-size: 11px;
+    top: 9px;
+  }
+
+  /* KEY FIGURE */
+  .figure-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 16px;
+    margin: 24px 0;
+    max-width: 760px;
+  }
+
+  .figure-card {
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 16px;
+    transition: border-color 0.2s;
+  }
+
+  .figure-card:hover { border-color: var(--gold-dim); }
+
+  .figure-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--cream);
+    margin-bottom: 6px;
+  }
+
+  .figure-role {
+    font-size: 12px;
+    color: var(--gold);
+    margin-bottom: 8px;
+    font-style: italic;
+  }
+
+  .figure-desc {
+    font-size: 13px;
+    color: var(--text-dim);
+    line-height: 1.5;
+  }
+
+  /* DIVIDER */
+  .divider {
+    border: none;
+    border-top: 1px solid var(--border);
+    margin: 40px 0;
+  }
+
+  /* QUOTE */
+  blockquote {
+    border-left: 3px solid var(--gold);
+    padding: 16px 24px;
+    margin: 24px 0;
+    font-style: italic;
+    color: var(--cream-dim);
+    font-size: 16px;
+    max-width: 680px;
+  }
+
+  blockquote cite {
+    display: block;
+    margin-top: 8px;
+    font-size: 13px;
+    color: var(--gold-dim);
+    font-style: normal;
+  }
+
+  /* TAG */
+  .tag {
+    display: inline-block;
+    background: rgba(201,168,76,0.1);
+    border: 1px solid var(--gold-dim);
+    color: var(--gold);
+    font-size: 11px;
+    padding: 3px 10px;
+    border-radius: 3px;
+    margin: 2px 3px;
+    font-family: 'Source Serif 4', serif;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+  }
+
+  /* HOME PAGE */
+  #home { display: block; }
+  #home.hidden { display: none; }
+
+  .bab-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
+    padding: 48px 64px 80px;
+  }
+
+  .bab-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 24px;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .bab-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 80% 20%, rgba(201,168,76,0.06), transparent 60%);
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+
+  .bab-card:hover {
+    border-color: var(--gold-dim);
+    transform: translateY(-2px);
+  }
+
+  .bab-card:hover::before { opacity: 1; }
+
+  .bab-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 11px;
+    color: var(--gold);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-weight: 700;
+    margin-bottom: 10px;
+  }
+
+  .bab-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 17px;
+    font-weight: 700;
+    color: var(--cream);
+    line-height: 1.3;
+    margin-bottom: 10px;
+  }
+
+  .bab-desc {
+    font-size: 13px;
+    color: var(--text-dim);
+    line-height: 1.5;
+  }
+
+  /* MOBILE TOGGLE */
+  #menu-toggle {
+    display: none;
+    position: fixed;
+    top: 16px; left: 16px;
+    z-index: 200;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    color: var(--gold);
+    font-size: 20px;
+    width: 40px; height: 40px;
+    border-radius: 6px;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+  }
+
+  @media (max-width: 900px) {
+    #sidebar { transform: translateX(-100%); }
+    #sidebar.open { transform: translateX(0); }
+    #main { margin-left: 0; }
+    #menu-toggle { display: flex; }
+    #hero, .chapter-hero { padding: 60px 24px 32px; }
+    .chapter-body, .bab-grid { padding: 32px 24px 60px; }
+    .chapter-hero::after { font-size: 80px; right: 16px; }
+  }
+
+  strong { color: var(--cream); }
+  em { color: var(--gold-light); }
+
+  .semester-tag {
+    display: inline-block;
+    padding: 4px 12px;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    border-radius: 3px;
+    margin-bottom: 16px;
+  }
+  .sem1 { background: rgba(74,143,168,0.15); border: 1px solid rgba(74,143,168,0.4); color: var(--accent-blue); }
+  .sem2 { background: rgba(196,74,58,0.12); border: 1px solid rgba(196,74,58,0.4); color: #d97060; }
+</style>
+</head>
+<body>
+
+<button id="menu-toggle" onclick="toggleMenu()">☰</button>
+
+<!-- SIDEBAR -->
+<nav id="sidebar">
+  <div class="sidebar-header">
+    <div class="label">Rangkuman UAS</div>
+    <h2>Sejarah Indonesia<br>Kelas XI</h2>
+  </div>
+  <div class="nav-section">
+    <div class="nav-chapter">
+      <button class="nav-chapter-btn active" onclick="showHome()">
+        <span class="num">⌂</span><span>Halaman Utama</span>
+      </button>
+    </div>
+    <div class="nav-chapter">
+      <button class="nav-chapter-btn" onclick="toggleChapter(1)">
+        <span class="num">I</span><span>Kolonialisme & Perlawanan Bangsa Indonesia</span>
+      </button>
+      <div class="nav-sub" id="sub-1">
+        <button class="nav-sub-item" onclick="scrollToSection('bab1-s1')">Latar Belakang Kolonialisme</button>
+        <button class="nav-sub-item" onclick="scrollToSection('bab1-s2')">VOC & Belanda</button>
+        <button class="nav-sub-item" onclick="scrollToSection('bab1-s3')">Perlawanan Daerah</button>
+        <button class="nav-sub-item" onclick="scrollToSection('bab1-s4')">Tanam Paksa & Dampaknya</button>
+        <button class="nav-sub-item" onclick="scrollToSection('bab1-s5')">Politik Etis</button>
+      </div>
+    </div>
+    <div class="nav-chapter">
+      <button class="nav-chapter-btn" onclick="toggleChapter(2)">
+        <span class="num">II</span><span>Pergerakan Kebangsaan Indonesia</span>
+      </button>
+      <div class="nav-sub" id="sub-2">
+        <button class="nav-sub-item" onclick="scrollToSection('bab2-s1')">Kebangkitan Nasional</button>
+        <button class="nav-sub-item" onclick="scrollToSection('bab2-s2')">Organisasi Pergerakan</button>
+        <button class="nav-sub-item" onclick="scrollToSection('bab2-s3')">Sumpah Pemuda 1928</button>
+        <button class="nav-sub-item" onclick="scrollToSection('bab2-s4')">Menuju Kemerdekaan</button>
+      </div>
+    </div>
+    <div class="nav-chapter">
+      <button class="nav-chapter-btn" onclick="toggleChapter(3)">
+        <span class="num">III</span><span>Indonesia di Bawah Tirani Jepang</span>
+      </button>
+      <div class="nav-sub" id="sub-3">
+        <button class="nav-sub-item" onclick="scrollToSection('bab3-s1')">Masuknya Jepang</button>
+        <button class="nav-sub-item" onclick="scrollToSection('bab3-s2')">Kebijakan Jepang</button>
+        <button class="nav-sub-item" onclick="scrollToSection('bab3-s3')">Romusha & Penderitaan</button>
+        <button class="nav-sub-item" onclick="scrollToSection('bab3-s4')">Perlawanan & BPUPKI</button>
+      </div>
+    </div>
+    <div class="nav-chapter">
+      <button class="nav-chapter-btn" onclick="toggleChapter(4)">
+        <span class="num">IV</span><span>Proklamasi Kemerdekaan</span>
+      </button>
+      <div class="nav-sub" id="sub-4">
+        <button class="nav-sub-item" onclick="scrollToSection('bab4-s1')">Peristiwa Rengasdengklok</button>
+        <button class="nav-sub-item" onclick="scrollToSection('bab4-s2')">Perumusan Teks Proklamasi</button>
+        <button class="nav-sub-item" onclick="scrollToSection('bab4-s3')">17 Agustus 1945</button>
+        <button class="nav-sub-item" onclick="scrollToSection('bab4-s4')">Makna Proklamasi</button>
+      </div>
+    </div>
+    <div class="nav-chapter">
+      <button class="nav-chapter-btn" onclick="toggleChapter(5)">
+        <span class="num">V</span><span>Kehidupan Awal Kemerdekaan & Demokrasi Liberal</span>
+      </button>
+      <div class="nav-sub" id="sub-5">
+        <button class="nav-sub-item" onclick="scrollToSection('bab5-s1')">Pembentukan Lembaga Negara</button>
+        <button class="nav-sub-item" onclick="scrollToSection('bab5-s2')">Demokrasi Liberal 1950–1959</button>
+        <button class="nav-sub-item" onclick="scrollToSection('bab5-s3')">Ekonomi Awal Kemerdekaan</button>
+        <button class="nav-sub-item" onclick="scrollToSection('bab5-s4')">Kabinet-Kabinet</button>
+      </div>
+    </div>
+    <div class="nav-chapter">
+      <button class="nav-chapter-btn" onclick="toggleChapter(6)">
+        <span class="num">VI</span><span>Demokrasi Terpimpin</span>
+      </button>
+      <div class="nav-sub" id="sub-6">
+        <button class="nav-sub-item" onclick="scrollToSection('bab6-s1')">Dekrit 5 Juli 1959</button>
+        <button class="nav-sub-item" onclick="scrollToSection('bab6-s2')">Sistem Politik</button>
+        <button class="nav-sub-item" onclick="scrollToSection('bab6-s3')">Ekonomi Terpimpin</button>
+        <button class="nav-sub-item" onclick="scrollToSection('bab6-s4')">G30S/PKI & Runtuhnya</button>
+      </div>
+    </div>
+    <div class="nav-chapter">
+      <button class="nav-chapter-btn" onclick="toggleChapter(7)">
+        <span class="num">VII</span><span>Perjuangan Fisik Mempertahankan Kemerdekaan</span>
+      </button>
+      <div class="nav-sub" id="sub-7">
+        <button class="nav-sub-item" onclick="scrollToSection('bab7-s1')">Kembalinya Sekutu & NICA</button>
+        <button class="nav-sub-item" onclick="scrollToSection('bab7-s2')">Pertempuran-Pertempuran Besar</button>
+        <button class="nav-sub-item" onclick="scrollToSection('bab7-s3')">Agresi Militer Belanda</button>
+      </div>
+    </div>
+    <div class="nav-chapter">
+      <button class="nav-chapter-btn" onclick="toggleChapter(8)">
+        <span class="num">VIII</span><span>Perjuangan Diplomasi</span>
+      </button>
+      <div class="nav-sub" id="sub-8">
+        <button class="nav-sub-item" onclick="scrollToSection('bab8-s1')">Perundingan Linggarjati</button>
+        <button class="nav-sub-item" onclick="scrollToSection('bab8-s2')">Perundingan Renville</button>
+        <button class="nav-sub-item" onclick="scrollToSection('bab8-s3')">Serangan Umum 1 Maret</button>
+        <button class="nav-sub-item" onclick="scrollToSection('bab8-s4')">KMB & Kedaulatan</button>
+      </div>
+    </div>
+    <div class="nav-chapter">
+      <button class="nav-chapter-btn" onclick="toggleChapter(9)">
+        <span class="num">IX</span><span>Integrasi untuk Kedaulatan</span>
+      </button>
+      <div class="nav-sub" id="sub-9">
+        <button class="nav-sub-item" onclick="scrollToSection('bab9-s1')">RIS ke NKRI</button>
+        <button class="nav-sub-item" onclick="scrollToSection('bab9-s2')">Pemberontakan Dalam Negeri</button>
+        <button class="nav-sub-item" onclick="scrollToSection('bab9-s3')">Penyatuan Irian Barat</button>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- MAIN -->
+<main id="main">
+
+  <!-- HOME -->
+  <div id="home">
+    <div id="hero">
+      <span class="hero-label">Rangkuman Lengkap UAS Semester Genap</span>
+      <h1>Sejarah<br><em>Indonesia</em><br>Kelas XI</h1>
+      <p>Materi lengkap dari Bab I sampai IX — Kurikulum Merdeka 2026. Klik bab yang ingin kamu pelajari.</p>
+      <div class="hero-meta">
+        <div class="hero-badge">Kelas <span>XI SMA</span></div>
+        <div class="hero-badge">Kurikulum <span>Merdeka 2026</span></div>
+        <div class="hero-badge"><span>9 Bab</span> Materi</div>
+        <div class="hero-badge">Semester <span>1 & 2</span></div>
+      </div>
+    </div>
+    <div class="bab-grid">
+      <div class="bab-card" onclick="openChapter(1)">
+        <div class="bab-num">BAB I · Semester 1</div>
+        <div class="bab-title">Kolonialisme & Perlawanan Bangsa Indonesia</div>
+        <div class="bab-desc">Kedatangan bangsa Eropa, VOC, Tanam Paksa, perlawanan daerah hingga Politik Etis.</div>
+      </div>
+      <div class="bab-card" onclick="openChapter(2)">
+        <div class="bab-num">BAB II · Semester 1</div>
+        <div class="bab-title">Pergerakan Kebangsaan Indonesia</div>
+        <div class="bab-desc">Budi Utomo, Sarekat Islam, PNI, Sumpah Pemuda, hingga menuju kemerdekaan.</div>
+      </div>
+      <div class="bab-card" onclick="openChapter(3)">
+        <div class="bab-num">BAB III · Semester 1</div>
+        <div class="bab-title">Indonesia di Bawah Tirani Jepang</div>
+        <div class="bab-desc">Pendudukan Jepang, romusha, Jugun Ianfu, BPUPKI, dan perlawanan rakyat.</div>
+      </div>
+      <div class="bab-card" onclick="openChapter(4)">
+        <div class="bab-num">BAB IV · Semester 1</div>
+        <div class="bab-title">Proklamasi Kemerdekaan</div>
+        <div class="bab-desc">Rengasdengklok, perumusan teks proklamasi, 17 Agustus 1945, dan maknanya.</div>
+      </div>
+      <div class="bab-card" onclick="openChapter(5)">
+        <div class="bab-num">BAB V · Semester 2</div>
+        <div class="bab-title">Kehidupan Awal Kemerdekaan & Demokrasi Liberal</div>
+        <div class="bab-desc">Pembentukan negara, kabinet-kabinet, ekonomi awal, hingga Demokrasi Liberal 1950–1959.</div>
+      </div>
+      <div class="bab-card" onclick="openChapter(6)">
+        <div class="bab-num">BAB VI · Semester 2</div>
+        <div class="bab-title">Demokrasi Terpimpin</div>
+        <div class="bab-desc">Dekrit Presiden 1959, Nasakom, ekonomi terpimpin, dan G30S/PKI 1965.</div>
+      </div>
+      <div class="bab-card" onclick="openChapter(7)">
+        <div class="bab-num">BAB VII · Semester 2</div>
+        <div class="bab-title">Perjuangan Fisik Mempertahankan Kemerdekaan</div>
+        <div class="bab-desc">Pertempuran Surabaya, Bandung Lautan Api, Agresi Militer Belanda I dan II.</div>
+      </div>
+      <div class="bab-card" onclick="openChapter(8)">
+        <div class="bab-num">BAB VIII · Semester 2</div>
+        <div class="bab-title">Perjuangan Diplomasi</div>
+        <div class="bab-desc">Linggarjati, Renville, Serangan Umum 1 Maret, Roem-Royen, hingga KMB 1949.</div>
+      </div>
+      <div class="bab-card" onclick="openChapter(9)">
+        <div class="bab-num">BAB IX · Semester 2</div>
+        <div class="bab-title">Integrasi untuk Kedaulatan</div>
+        <div class="bab-desc">RIS ke NKRI, pemberontakan dalam negeri, dan penyatuan Irian Barat.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CHAPTER CONTENT -->
+  <div id="content">
+
+    <!-- BAB 1 -->
+    <div class="chapter" id="chapter-1">
+      <div class="chapter-hero" data-num="I">
+        <span class="chapter-label">BAB I — Semester 1</span>
+        <div class="semester-tag sem1">Semester Ganjil</div>
+        <h2>Kolonialisme dan Perlawanan Bangsa Indonesia</h2>
+        <p class="chapter-intro">Dari kedatangan bangsa Eropa yang mencari rempah-rempah hingga sistem tanam paksa yang menyengsarakan rakyat — dan bagaimana bangsa Indonesia tidak pernah berhenti melawan.</p>
+      </div>
+      <div class="chapter-body">
+
+        <div class="section" id="bab1-s1">
+          <h3>Latar Belakang Kolonialisme di Indonesia</h3>
+          <p>Kolonialisme adalah penguasaan suatu wilayah oleh bangsa asing untuk kepentingan ekonomi, politik, dan budaya. Indonesia menjadi incaran bangsa Eropa karena kekayaan rempah-rempahnya yang sangat berharga di pasar dunia.</p>
+          
+          <div class="box">
+            <div class="box-title">Faktor Pendorong Kedatangan Eropa</div>
+            <p><strong>3G: Gold, Glory, Gospel</strong> — mencari kekayaan (emas dan rempah), kejayaan (kekuasaan), dan menyebarkan agama Kristen.</p>
+            <p>Jatuhnya Konstantinopel ke tangan Turki Usmani (1453) memotong jalur perdagangan darat, memaksa Eropa mencari jalur laut baru ke Asia.</p>
+          </div>
+
+          <h4>Urutan Kedatangan Bangsa Eropa</h4>
+          <div class="timeline">
+            <div class="timeline-item">
+              <div class="timeline-year">1511</div>
+              <div class="timeline-dot"></div>
+              <div class="timeline-content">
+                <strong>Portugis tiba di Maluku</strong>
+                <p>Alfonso de Albuquerque menaklukkan Malaka. Portugis mendominasi perdagangan rempah di Maluku, terutama cengkeh dan pala.</p>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-year">1521</div>
+              <div class="timeline-dot"></div>
+              <div class="timeline-content">
+                <strong>Spanyol muncul dari arah timur</strong>
+                <p>Ekspedisi Magelhaens tiba di Maluku. Terjadi persaingan dengan Portugis, diselesaikan Perjanjian Saragosa (1529).</p>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-year">1596</div>
+              <div class="timeline-dot"></div>
+              <div class="timeline-content">
+                <strong>Belanda pertama kali tiba</strong>
+                <p>Cornelis de Houtman mendarat di Banten dengan 4 kapal. Awalnya disambut baik, tapi sikap kasar mereka memperburuk hubungan.</p>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-year">1602</div>
+              <div class="timeline-dot"></div>
+              <div class="timeline-content">
+                <strong>VOC dibentuk</strong>
+                <p>Vereenigde Oost-Indische Compagnie — kongsi dagang yang diberi hak monopoli luar biasa oleh pemerintah Belanda.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="section" id="bab1-s2">
+          <h3>VOC dan Kekuasaan Belanda</h3>
+          <p>VOC bukan sekadar perusahaan dagang biasa — ia memiliki kekuatan seperti negara: punya tentara, bisa menyatakan perang, menandatangani perjanjian, dan mencetak mata uang.</p>
+
+          <div class="box">
+            <div class="box-title">Hak-Hak Istimewa VOC (Hak Octrooi)</div>
+            <p>1. Monopoli dagang di Asia</p>
+            <p>2. Membentuk angkatan perang</p>
+            <p>3. Menyatakan perang dan damai</p>
+            <p>4. Membuat perjanjian dengan raja-raja lokal</p>
+            <p>5. Mencetak uang</p>
+            <p>6. Mendirikan benteng dan menunjuk pejabat</p>
+          </div>
+
+          <h4>Sistem Monopoli dan Hak Ekstirpasi</h4>
+          <p>VOC memaksa rakyat menjual hasil bumi hanya kepada VOC dengan harga yang ditetapkan VOC sendiri. <strong>Hak Ekstirpasi</strong> adalah hak VOC untuk memusnahkan tanaman rempah di luar wilayah yang ditentukan, sehingga rakyat Banda dan Maluku menderita hebat.</p>
+
+          <h4>Keruntuhan VOC (1799)</h4>
+          <p>VOC akhirnya bangkrut pada 31 Desember 1799 karena korupsi yang merajalela, biaya perang yang besar, dan persaingan dari Inggris dan Prancis. Seluruh utang dan aset VOC diambil alih pemerintah Belanda (Bataafsche Republiek).</p>
+          
+          <div class="box blue">
+            <div class="box-title">Gubernur Jenderal Paling Berpengaruh</div>
+            <p><strong>J.P. Coen (1619)</strong> — mendirikan Batavia (kini Jakarta) sebagai pusat operasi VOC, membantai penduduk Banda.</p>
+            <p><strong>Daendels (1808–1811)</strong> — membangun Jalan Raya Pos sepanjang 1.000 km dari Anyer ke Panarukan menggunakan kerja paksa, menelan ribuan nyawa.</p>
+            <p><strong>Raffles (1811–1816)</strong> — Gubernur Inggris, mengenalkan sistem sewa tanah (landrent), menemukan bunga Rafflesia Arnoldi.</p>
+            <p><strong>Van den Bosch (1830)</strong> — merancang Tanam Paksa (Cultuurstelsel).</p>
+          </div>
+        </div>
+
+        <div class="section" id="bab1-s3">
+          <h3>Perlawanan Bangsa Indonesia Terhadap Kolonialisme</h3>
+          <p>Rakyat Indonesia tidak pernah menerima penjajahan dengan diam. Di berbagai penjuru Nusantara, terjadi perlawanan yang heroik meski akhirnya banyak yang dikalahkan karena perbedaan teknologi senjata dan strategi "devide et impera" (adu domba) Belanda.</p>
+
+          <div class="table-wrap">
+            <table>
+              <thead><tr><th>Nama Perlawanan</th><th>Tokoh</th><th>Daerah</th><th>Tahun</th><th>Sebab Kekalahan</th></tr></thead>
+              <tbody>
+                <tr><td>Perlawanan Ternate</td><td>Sultan Baab Ullah, Sultan Said Barakati</td><td>Maluku</td><td>1570–1575</td><td>Kurangnya persenjataan modern</td></tr>
+                <tr><td>Perang Pattimura</td><td>Kapitan Pattimura (Thomas Matulessy)</td><td>Maluku</td><td>1817</td><td>Pengkhianatan, ditangkap dan dihukum gantung</td></tr>
+                <tr><td>Perang Padri</td><td>Tuanku Imam Bonjol</td><td>Sumatera Barat</td><td>1821–1837</td><td>Devide et impera — Belanda bersekutu dengan kaum Adat</td></tr>
+                <tr><td>Perang Diponegoro</td><td>Pangeran Diponegoro</td><td>Jawa Tengah</td><td>1825–1830</td><td>Ditipu dalam perundingan, ditangkap di Magelang</td></tr>
+                <tr><td>Perang Banjarmasin</td><td>Pangeran Antasari</td><td>Kalimantan</td><td>1859–1905</td><td>Gugur dalam pertempuran</td></tr>
+                <tr><td>Perang Aceh</td><td>Teuku Umar, Cut Nyak Dhien, Cut Mutia</td><td>Aceh</td><td>1873–1912</td><td>Strategi konsentrasi Belanda (Snouck Hurgronje)</td></tr>
+                <tr><td>Perang Puputan Bali</td><td>Raja Badung, Raja Klungkung</td><td>Bali</td><td>1906–1908</td><td>Puputan — bertempur sampai mati daripada menyerah</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="box red">
+            <div class="box-title">Devide et Impera — Senjata Terkuat Belanda</div>
+            <p>Strategi "pecah belah dan kuasai" adalah cara Belanda mengalahkan perlawanan. Mereka mengadu domba kerajaan-kerajaan, memihak satu kerajaan untuk menghancurkan yang lain, lalu giliran kerajaan sekutu mereka pun dikuasai.</p>
+          </div>
+        </div>
+
+        <div class="section" id="bab1-s4">
+          <h3>Tanam Paksa (Cultuurstelsel, 1830–1870)</h3>
+          <p>Setelah perang Diponegoro yang menguras kas Belanda, Gubernur Jenderal Van den Bosch mencetuskan <strong>Tanam Paksa</strong> — sistem yang memaksa rakyat menyerahkan sebagian tanahnya atau waktu kerjanya untuk menanam komoditas ekspor demi keuntungan Belanda.</p>
+
+          <h4>Ketentuan Tanam Paksa</h4>
+          <ul class="styled-list">
+            <li>Setiap desa wajib menyerahkan <strong>1/5 lahan pertaniannya</strong> untuk ditanami tanaman ekspor (kopi, teh, tebu, indigo).</li>
+            <li>Jika tidak punya lahan, wajib <strong>bekerja 66 hari (1/5 tahun)</strong> di perkebunan Belanda.</li>
+            <li>Kelebihan produksi di atas taksiran seharusnya dikembalikan ke petani, tapi <em>nyatanya tidak pernah</em>.</li>
+            <li>Kerusakan akibat bencana alam menjadi tanggungan petani.</li>
+          </ul>
+
+          <h4>Dampak Tanam Paksa</h4>
+          <div class="box red">
+            <div class="box-title">Dampak Buruk bagi Rakyat Indonesia</div>
+            <p>• Kelaparan massal di Cirebon (1843), Demak & Grobogan (1849–1850) — ribuan orang meninggal.</p>
+            <p>• Sawah terlantar karena dipaksa menanam tanaman ekspor, produksi padi turun drastis.</p>
+            <p>• Wabah penyakit merajalela akibat kekurangan gizi dan kerja paksa.</p>
+          </div>
+          <div class="box">
+            <div class="box-title">Untung untuk Belanda</div>
+            <p>Tanam Paksa menghasilkan keuntungan <em>823 juta gulden</em> untuk Belanda antara 1831–1877. Ini menyelamatkan Belanda dari kebangkrutan dan membiayai pembangunan kereta api di negeri Belanda sendiri.</p>
+          </div>
+
+          <h4>Kritik terhadap Tanam Paksa</h4>
+          <p><strong>Eduard Douwes Dekker (Multatuli)</strong> menulis novel <em>"Max Havelaar" (1860)</em> yang mengkritik keras penindasan sistem Tanam Paksa. Novel ini mengguncang opini publik Eropa dan mendorong lahirnya Politik Etis.</p>
+        </div>
+
+        <div class="section" id="bab1-s5">
+          <h3>Politik Etis (1901)</h3>
+          <p>Atas desakan kaum humanis Belanda, Ratu Wilhelmina memproklamasikan <strong>Politik Etis</strong> pada 1901 — sebuah "balas budi" Belanda kepada rakyat Indonesia yang telah lama diperas.</p>
+
+          <div class="box">
+            <div class="box-title">Tiga Program Politik Etis (Trilogi Van Deventer)</div>
+            <p><strong>1. Irigasi</strong> — membangun jaringan pengairan untuk pertanian rakyat.</p>
+            <p><strong>2. Emigrasi</strong> — memindahkan penduduk Jawa yang padat ke luar Jawa (Sumatera, Kalimantan).</p>
+            <p><strong>3. Edukasi</strong> — mendirikan sekolah-sekolah untuk rakyat pribumi.</p>
+          </div>
+
+          <p>Program <strong>Edukasi</strong> memiliki dampak paling besar jangka panjang: melahirkan golongan terpelajar (kaum intelektual) Indonesia yang kemudian menjadi motor penggerak pergerakan nasional. Tanpa pendidikan Politik Etis, tokoh-tokoh seperti Soekarno, Hatta, dan Cipto Mangunkusumo mungkin tidak akan terlahir.</p>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- BAB 2 -->
+    <div class="chapter" id="chapter-2">
+      <div class="chapter-hero" data-num="II">
+        <span class="chapter-label">BAB II — Semester 1</span>
+        <div class="semester-tag sem1">Semester Ganjil</div>
+        <h2>Pergerakan Kebangsaan Indonesia</h2>
+        <p class="chapter-intro">Dari lahirnya organisasi modern pertama hingga ikrar pemuda yang menyatukan — sebuah perjalanan panjang menuju kesadaran sebagai satu bangsa.</p>
+      </div>
+      <div class="chapter-body">
+
+        <div class="section" id="bab2-s1">
+          <h3>Kebangkitan Nasional</h3>
+          <p>Kebangkitan Nasional adalah fase di mana rakyat Indonesia mulai melawan penjajah bukan lagi dengan senjata secara kedaerahan, melainkan melalui organisasi modern yang bersifat nasional. Ini didorong oleh pendidikan Politik Etis yang melahirkan kaum terpelajar.</p>
+          
+          <div class="box">
+            <div class="box-title">Faktor Pendorong Pergerakan Nasional</div>
+            <p><strong>Internal:</strong> Penderitaan rakyat akibat penjajahan, lahirnya kaum terpelajar, kenangan akan kejayaan masa lalu (Majapahit, Sriwijaya).</p>
+            <p><strong>Eksternal:</strong> Kemenangan Jepang atas Rusia (1905) — membuktikan bangsa Asia bisa mengalahkan Eropa. Gerakan nasionalisme di India, Filipina, dan Tiongkok.</p>
+          </div>
+
+          <h4>20 Mei 1908 — Hari Kebangkitan Nasional</h4>
+          <p>Tanggal ini ditetapkan berdasarkan berdirinya <strong>Budi Utomo</strong>, organisasi modern pertama Indonesia yang didirikan oleh Dr. Wahidin Sudirohusodo dan diprakarsai oleh mahasiswa STOVIA (Sekolah Dokter Jawa).</p>
+        </div>
+
+        <div class="section" id="bab2-s2">
+          <h3>Organisasi-Organisasi Pergerakan</h3>
+
+          <div class="figure-grid">
+            <div class="figure-card">
+              <div class="figure-name">Budi Utomo (1908)</div>
+              <div class="figure-role">Organisasi modern pertama</div>
+              <div class="figure-desc">Didirikan mahasiswa STOVIA. Fokus pada kemajuan pendidikan dan budaya Jawa, belum bersifat politis.</div>
+            </div>
+            <div class="figure-card">
+              <div class="figure-name">Sarekat Islam (1912)</div>
+              <div class="figure-role">H.O.S. Tjokroaminoto</div>
+              <div class="figure-desc">Bermula dari Sarekat Dagang Islam. Menjadi organisasi massa pertama dengan anggota jutaan orang, fokus pada Islam dan ekonomi pribumi.</div>
+            </div>
+            <div class="figure-card">
+              <div class="figure-name">Indische Partij (1912)</div>
+              <div class="figure-role">Tiga Serangkai</div>
+              <div class="figure-desc">Didirikan Douwes Dekker, Cipto Mangunkusumo, Suwardi Suryaningrat. Partai politik pertama yang menuntut kemerdekaan. Dibubarkan Belanda.</div>
+            </div>
+            <div class="figure-card">
+              <div class="figure-name">PKI (1920)</div>
+              <div class="figure-role">Semaun, Darsono</div>
+              <div class="figure-desc">Partai Komunis Indonesia, pertama di Asia. Melakukan pemberontakan 1926–1927 yang gagal dan ditumpas Belanda.</div>
+            </div>
+            <div class="figure-card">
+              <div class="figure-name">PNI (1927)</div>
+              <div class="figure-role">Soekarno</div>
+              <div class="figure-desc">Partai Nasional Indonesia, menuntut kemerdekaan penuh. Soekarno ditangkap Belanda (1929) dan diasingkan.</div>
+            </div>
+            <div class="figure-card">
+              <div class="figure-name">Perhimpunan Indonesia</div>
+              <div class="figure-role">Hatta, Syahrir</div>
+              <div class="figure-desc">Organisasi mahasiswa Indonesia di Belanda. Aktif mempropagandakan kemerdekaan Indonesia di forum internasional.</div>
+            </div>
+          </div>
+
+          <h4>Pers dan Pergerakan</h4>
+          <p>Media massa berperan besar dalam menyebarkan semangat nasionalisme. <strong>De Locomotief, Bintang Hindia, Oetoesan Hindia</strong> menjadi corong pergerakan. Suwardi Suryaningrat menulis artikel provokatif <em>"Als ik een Nederlander was"</em> (Andaikan Aku Seorang Belanda, 1913) yang membuatnya diasingkan ke Belanda.</p>
+        </div>
+
+        <div class="section" id="bab2-s3">
+          <h3>Sumpah Pemuda 28 Oktober 1928</h3>
+          <p>Puncak persatuan pemuda Indonesia terwujud dalam Kongres Pemuda II yang berlangsung di Jakarta, 26–28 Oktober 1928.</p>
+
+          <blockquote>
+            "Kami putra dan putri Indonesia, mengaku bertumpah darah yang satu, tanah air Indonesia.<br>
+            Kami putra dan putri Indonesia, mengaku berbangsa yang satu, bangsa Indonesia.<br>
+            Kami putra dan putri Indonesia, menjunjung bahasa persatuan, bahasa Indonesia."
+            <cite>— Ikrar Sumpah Pemuda, 28 Oktober 1928</cite>
+          </blockquote>
+
+          <div class="box">
+            <div class="box-title">Tokoh-Tokoh Kongres Pemuda II</div>
+            <p><strong>Soegondo Djojopoespito</strong> — Ketua Kongres</p>
+            <p><strong>Muhammad Yamin</strong> — merumuskan teks Sumpah Pemuda</p>
+            <p><strong>W.R. Supratman</strong> — pertama kali memperdengarkan lagu Indonesia Raya (dengan biola, bukan dinyanyikan karena takut dilarang Belanda)</p>
+          </div>
+
+          <h4>Makna Sumpah Pemuda</h4>
+          <ul class="styled-list">
+            <li>Mempersatukan gerakan pemuda yang sebelumnya terfragmentasi secara kedaerahan dan etnis.</li>
+            <li>Menetapkan Bahasa Indonesia (berdasarkan Bahasa Melayu) sebagai bahasa persatuan.</li>
+            <li>Menegaskan identitas kebangsaan Indonesia sebagai satu kesatuan.</li>
+            <li>Mempercepat cita-cita kemerdekaan dari sekadar wacana menjadi tekad bulat.</li>
+          </ul>
+        </div>
+
+        <div class="section" id="bab2-s4">
+          <h3>Menuju Kemerdekaan (1930–1945)</h3>
+          <p>Pasca Sumpah Pemuda, pergerakan semakin radikal. Belanda semakin represif — banyak pemimpin pergerakan ditangkap, diasingkan, atau dipenjarakan.</p>
+
+          <div class="timeline">
+            <div class="timeline-item">
+              <div class="timeline-year">1927</div>
+              <div class="timeline-dot"></div>
+              <div class="timeline-content"><strong>Soekarno mendirikan PNI</strong><p>PNI menjadi kekuatan politik terbesar dengan ideologi nasionalisme sekuler.</p></div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-year">1929</div>
+              <div class="timeline-dot"></div>
+              <div class="timeline-content"><strong>Soekarno ditangkap</strong><p>Dipenjara Belanda, ia menulis pledoi terkenal "Indonesia Menggugat" di pengadilan Bandung.</p></div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-year">1934</div>
+              <div class="timeline-dot"></div>
+              <div class="timeline-content"><strong>Hatta dan Syahrir diasingkan ke Boven Digoel</strong><p>Kemudian dipindah ke Banda Neira.</p></div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-year">1942</div>
+              <div class="timeline-dot"></div>
+              <div class="timeline-content"><strong>Jepang mengusir Belanda</strong><p>Babak baru dimulai: penjajahan Jepang yang brutal namun secara paradoks memberi kesempatan lebih bagi kaum nasionalis.</p></div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- BAB 3 -->
+    <div class="chapter" id="chapter-3">
+      <div class="chapter-hero" data-num="III">
+        <span class="chapter-label">BAB III — Semester 1</span>
+        <div class="semester-tag sem1">Semester Ganjil</div>
+        <h2>Indonesia di Bawah Tirani Jepang</h2>
+        <p class="chapter-intro">Tiga setengah tahun pendudukan Jepang lebih kejam dari tiga abad Belanda — namun di balik tirani itu, kemerdekaan Indonesia justru semakin matang.</p>
+      </div>
+      <div class="chapter-body">
+
+        <div class="section" id="bab3-s1">
+          <h3>Masuknya Jepang ke Indonesia</h3>
+          <p>Dalam konteks <strong>Perang Pasifik (Perang Dunia II)</strong>, Jepang melancarkan ekspansi besar-besaran ke Asia Tenggara untuk mendapatkan sumber daya alam, terutama minyak bumi dari Kalimantan dan Sumatera.</p>
+
+          <div class="timeline">
+            <div class="timeline-item">
+              <div class="timeline-year">Des 1941</div>
+              <div class="timeline-dot"></div>
+              <div class="timeline-content"><strong>Jepang menyerang Pearl Harbor</strong><p>Amerika Serikat resmi masuk Perang Pasifik. Jepang juga serentak menyerang Malaya, Filipina, dan Hong Kong.</p></div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-year">Jan 1942</div>
+              <div class="timeline-dot"></div>
+              <div class="timeline-content"><strong>Jepang menyerbu Indonesia</strong><p>Tarakan (Kalimantan) jatuh pertama, lalu Balikpapan. Minyak menjadi target utama.</p></div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-year">8 Mar 1942</div>
+              <div class="timeline-dot"></div>
+              <div class="timeline-content"><strong>Belanda menyerah tanpa syarat</strong><p>Gubernur Jenderal Ter Poorten menyerah kepada Jenderal Imamura di Kalijati, Subang. Berakhirnya 350 tahun kekuasaan Belanda.</p></div>
+            </div>
+          </div>
+
+          <h4>Propaganda "Asia untuk Asia"</h4>
+          <p>Jepang mempropagandakan dirinya sebagai "saudara tua" Asia yang datang membebaskan dari penjajah Barat. Slogan <em>"Nippon Cahaya Asia, Pelindung Asia, Pemimpin Asia"</em> disambut antusias rakyat Indonesia yang lelah dijajah Belanda.</p>
+          <p>Namun kenyataan berbeda jauh. Jepang segera mengganti satu penjajah dengan penjajah yang lebih kejam.</p>
+        </div>
+
+        <div class="section" id="bab3-s2">
+          <h3>Kebijakan Pendudukan Jepang</h3>
+
+          <h4>Pembagian Wilayah</h4>
+          <p>Jepang membagi Indonesia menjadi tiga wilayah administrasi militer:</p>
+          <ul class="styled-list">
+            <li><strong>Jawa dan Madura</strong> — di bawah komando Angkatan Darat ke-16 (berpusat di Jakarta)</li>
+            <li><strong>Sumatera</strong> — di bawah Angkatan Darat ke-25 (berpusat di Singapura)</li>
+            <li><strong>Kalimantan, Sulawesi, Maluku, Nusa Tenggara</strong> — di bawah Angkatan Laut (berpusat di Makassar)</li>
+          </ul>
+
+          <h4>Organisasi Bentukan Jepang</h4>
+          <div class="table-wrap">
+            <table>
+              <thead><tr><th>Organisasi</th><th>Tahun</th><th>Tujuan Jepang</th><th>Manfaat bagi Indonesia</th></tr></thead>
+              <tbody>
+                <tr><td>Gerakan Tiga A</td><td>1942</td><td>Propaganda pro-Jepang</td><td>Tidak berkembang, dibubarkan</td></tr>
+                <tr><td>Putera (Pusat Tenaga Rakyat)</td><td>1943</td><td>Mobilisasi rakyat untuk perang</td><td>Soekarno-Hatta justru gunakan untuk menanamkan nasionalisme</td></tr>
+                <tr><td>Jawa Hokokai</td><td>1944</td><td>Menggantikan Putera</td><td>Pengorganisasian rakyat Jawa</td></tr>
+                <tr><td>PETA (Pembela Tanah Air)</td><td>1943</td><td>Pasukan pertahanan bantu Jepang</td><td>Pelatihan militer bagi pemuda Indonesia — kelak menjadi cikal bakal TNI</td></tr>
+                <tr><td>Heiho</td><td>1943</td><td>Pembantu tentara Jepang</td><td>Pengalaman militer bagi rakyat</td></tr>
+                <tr><td>BPUPKI</td><td>1945</td><td>Menyiapkan kemerdekaan (atas tekanan)</td><td>Merumuskan dasar negara dan UUD</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="section" id="bab3-s3">
+          <h3>Romusha dan Penderitaan Rakyat</h3>
+          <p><strong>Romusha</strong> adalah sistem kerja paksa yang diterapkan Jepang — rakyat dipaksa bekerja tanpa upah dalam kondisi brutal untuk membangun infrastruktur militer Jepang (jalan, lapangan terbang, benteng, terowongan).</p>
+
+          <div class="box red">
+            <div class="box-title">Kekejaman Jepang terhadap Rakyat Indonesia</div>
+            <p><strong>Romusha:</strong> Diperkirakan 4–10 juta orang dipaksa menjadi romusha. Ribuan meninggal akibat kerja keras, kelaparan, dan penyakit. Banyak dikirim ke luar Indonesia (Burma, Malaya).</p>
+            <p><strong>Jugun Ianfu:</strong> Perempuan Indonesia dipaksa menjadi "wanita penghibur" bagi tentara Jepang — salah satu kejahatan perang terbesar dalam sejarah.</p>
+            <p><strong>Kelaparan:</strong> Padi rakyat dirampas untuk memenuhi kebutuhan perang Jepang. Banyak wilayah mengalami kelaparan parah.</p>
+            <p><strong>Romusa Intelektual:</strong> Guru, dokter, dan terpelajar dipaksa menjadi propagandis Jepang.</p>
+          </div>
+
+          <h4>Kebijakan Ekonomi Perang</h4>
+          <p>Semua sumber daya alam Indonesia — minyak, karet, beras, besi — dieksploitasi secara masif untuk kepentingan mesin perang Jepang. Ekonomi rakyat lumpuh total.</p>
+        </div>
+
+        <div class="section" id="bab3-s4">
+          <h3>Perlawanan Rakyat & Pembentukan BPUPKI</h3>
+
+          <h4>Perlawanan Terhadap Jepang</h4>
+          <div class="table-wrap">
+            <table>
+              <thead><tr><th>Perlawanan</th><th>Tokoh</th><th>Tempat</th><th>Tahun</th></tr></thead>
+              <tbody>
+                <tr><td>Pemberontakan PETA Blitar</td><td>Supriyadi</td><td>Blitar, Jawa Timur</td><td>Februari 1945</td></tr>
+                <tr><td>Perlawanan Singaparna</td><td>K.H. Zainal Mustafa</td><td>Tasikmalaya, Jawa Barat</td><td>1944</td></tr>
+                <tr><td>Perlawanan Aceh</td><td>Tengku Abdul Jalil</td><td>Cot Plieng, Aceh</td><td>1942</td></tr>
+                <tr><td>Perlawanan Kalimantan</td><td>Pang Suma</td><td>Kalimantan Barat</td><td>1944</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <h4>BPUPKI — Badan Penyelidik Usaha Persiapan Kemerdekaan Indonesia</h4>
+          <p>Dibentuk Jepang pada <strong>29 April 1945</strong>, dipimpin oleh <strong>Dr. K.R.T. Radjiman Wedyodiningrat</strong>. BPUPKI bersidang dua kali:</p>
+          
+          <div class="box">
+            <div class="box-title">Sidang BPUPKI Pertama (29 Mei – 1 Juni 1945)</div>
+            <p>Membahas dasar negara. Tiga usulan penting:</p>
+            <p><strong>Muhammad Yamin (29 Mei):</strong> Peri Kebangsaan, Peri Kemanusiaan, Peri Ketuhanan, Peri Kerakyatan, Kesejahteraan Rakyat.</p>
+            <p><strong>Soepomo (31 Mei):</strong> Persatuan, kekeluargaan, mufakat/musyawarah, keadilan sosial, negara integralistik.</p>
+            <p><strong>Soekarno (1 Juni):</strong> <em>Pancasila</em> — Kebangsaan Indonesia, Internasionalisme, Mufakat/Demokrasi, Kesejahteraan Sosial, Ketuhanan Yang Maha Esa. <strong>1 Juni diperingati sebagai Hari Lahir Pancasila.</strong></p>
+          </div>
+
+          <div class="box">
+            <div class="box-title">Sidang BPUPKI Kedua (10–16 Juli 1945)</div>
+            <p>Membahas bentuk negara, wilayah, dan UUD. Panitia Kecil (Panitia 9) merumuskan <strong>Piagam Jakarta (22 Juni 1945)</strong> yang memuat rancangan pembukaan UUD dengan frasa "...dengan kewajiban menjalankan syariat Islam bagi pemeluk-pemeluknya."</p>
+            <p>Frasa ini kemudian diubah menjadi <em>"Ketuhanan Yang Maha Esa"</em> menjelang proklamasi untuk menjaga persatuan.</p>
+          </div>
+
+          <h4>PPKI — Panitia Persiapan Kemerdekaan Indonesia</h4>
+          <p>Dibentuk pada <strong>7 Agustus 1945</strong>, menggantikan BPUPKI. Diketuai Soekarno, beranggotakan 21 orang yang mewakili seluruh wilayah Indonesia. Bertugas mempersiapkan kemerdekaan secara teknis.</p>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- BAB 4 -->
+    <div class="chapter" id="chapter-4">
+      <div class="chapter-hero" data-num="IV">
+        <span class="chapter-label">BAB IV — Semester 1</span>
+        <div class="semester-tag sem1">Semester Ganjil</div>
+        <h2>Proklamasi Kemerdekaan Indonesia</h2>
+        <p class="chapter-intro">Detik-detik yang mengubah sejarah — dari malam gelap Rengasdengklok hingga pagi bersejarah 17 Agustus 1945 di Pegangsaan Timur 56.</p>
+      </div>
+      <div class="chapter-body">
+
+        <div class="section" id="bab4-s1">
+          <h3>Peristiwa Rengasdengklok</h3>
+          <p>Kekalahan Jepang di Perang Pasifik semakin jelas setelah bom atom dijatuhkan di <strong>Hiroshima (6 Agustus 1945)</strong> dan <strong>Nagasaki (9 Agustus 1945)</strong>. Jepang menyerah kepada Sekutu pada <strong>15 Agustus 1945</strong>.</p>
+
+          <p>Mendengar berita kekalahan Jepang (dari siaran radio), para pemuda pergerakan mendesak Soekarno-Hatta untuk segera memproklamasikan kemerdekaan. Namun Soekarno-Hatta masih menunggu keputusan PPKI.</p>
+
+          <div class="box red">
+            <div class="box-title">Konflik Golongan Tua vs Golongan Muda</div>
+            <p><strong>Golongan Muda</strong> (Sukarni, Chaerul Saleh, Wikana, Adam Malik): Ingin proklamasi segera dilakukan secara revolusioner, tanpa menunggu PPKI yang dianggap bentukan Jepang.</p>
+            <p><strong>Golongan Tua</strong> (Soekarno, Hatta): Ingin melalui jalur PPKI agar proklamasi sah secara hukum dan terorganisir.</p>
+          </div>
+
+          <h4>Penculikan ke Rengasdengklok</h4>
+          <p>Pada dini hari <strong>16 Agustus 1945 pukul 04.00</strong>, pemuda (dipimpin Sukarni) membawa Soekarno dan Hatta ke <strong>Rengasdengklok</strong>, Karawang — sebuah kota kecil yang bebas dari pengawasan Jepang dan Belanda. Tujuannya: menjauhkan dari pengaruh Jepang dan memaksa mereka segera berproklamasi.</p>
+          <p>Sorenya, <strong>Ahmad Soebardjo</strong> datang menjemput dengan jaminan proklamasi akan dilakukan esok hari, 17 Agustus 1945.</p>
+        </div>
+
+        <div class="section" id="bab4-s2">
+          <h3>Perumusan Teks Proklamasi</h3>
+          <p>Malam hari 16 Agustus 1945, rombongan kembali ke Jakarta dan berkumpul di <strong>rumah Laksamana Maeda</strong> (perwira Angkatan Laut Jepang yang bersimpati pada kemerdekaan Indonesia), di Jalan Imam Bonjol No. 1.</p>
+
+          <div class="box">
+            <div class="box-title">Proses Perumusan</div>
+            <p>Soekarno, Hatta, dan Ahmad Soebardjo merumuskan teks proklamasi di ruang makan Maeda pada sekitar pukul 03.00 dini hari.</p>
+            <p><strong>Kalimat pertama</strong> ("Kami bangsa Indonesia dengan ini menyatakan kemerdekaan Indonesia") usulan <em>Soekarno</em>.</p>
+            <p><strong>Kalimat kedua</strong> ("Hal-hal yang mengenai pemindahan kekuasaan...") usulan <em>Ahmad Soebardjo</em>, disempurnakan <em>Hatta</em>.</p>
+            <p>Teks diketik oleh <strong>Sayuti Melik</strong>, dengan beberapa perubahan kecil dari tulisan tangan Soekarno.</p>
+          </div>
+
+          <h4>Penanda Tanganan</h4>
+          <p>Awalnya teks akan ditandatangani seluruh hadirin (sekitar 40-an orang). Namun Sukarni mengusulkan agar hanya ditandatangani <strong>Soekarno dan Hatta atas nama bangsa Indonesia</strong> — usul yang diterima.</p>
+        </div>
+
+        <div class="section" id="bab4-s3">
+          <h3>17 Agustus 1945 — Hari Proklamasi</h3>
+          <p>Jumat pagi, <strong>17 Agustus 1945 pukul 10.00 WIB</strong>, di <strong>Jalan Pegangsaan Timur No. 56</strong>, Jakarta (kediaman Soekarno).</p>
+
+          <div class="box">
+            <div class="box-title">Rangkaian Acara Proklamasi</div>
+            <p><strong>1.</strong> Pembacaan teks proklamasi oleh Soekarno, didampingi Hatta.</p>
+            <p><strong>2.</strong> Pengibaran Bendera Merah Putih oleh <strong>Latief Hendraningrat</strong> dan <strong>Suhud Sastro Kusumo</strong> (tiang bendera dari bambu, bendera dijahit Fatmawati).</p>
+            <p><strong>3.</strong> Peserta menyanyikan lagu <strong>Indonesia Raya</strong>.</p>
+          </div>
+
+          <p>Berita proklamasi disebarkan oleh <strong>Waidan B. Palenewen</strong> melalui kantor berita Domei, kemudian melalui siaran radio. Meski Jepang sempat menyensor, berita proklamasi tetap menyebar ke seluruh Indonesia dan dunia.</p>
+
+          <h4>Tokoh-Tokoh Kunci Proklamasi</h4>
+          <div class="figure-grid">
+            <div class="figure-card">
+              <div class="figure-name">Soekarno</div>
+              <div class="figure-role">Proklamator &amp; Presiden Pertama</div>
+              <div class="figure-desc">Membacakan teks proklamasi dan menjadi presiden RI pertama.</div>
+            </div>
+            <div class="figure-card">
+              <div class="figure-name">Mohammad Hatta</div>
+              <div class="figure-role">Proklamator &amp; Wapres Pertama</div>
+              <div class="figure-desc">Mendampingi Soekarno, menjadi wakil presiden pertama.</div>
+            </div>
+            <div class="figure-card">
+              <div class="figure-name">Ahmad Soebardjo</div>
+              <div class="figure-role">Penyusun Teks</div>
+              <div class="figure-desc">Turut merumuskan teks, menjemput Soekarno-Hatta dari Rengasdengklok.</div>
+            </div>
+            <div class="figure-card">
+              <div class="figure-name">Fatmawati</div>
+              <div class="figure-role">Penjahit Bendera Pusaka</div>
+              <div class="figure-desc">Menjahit Bendera Merah Putih yang dikibarkan pertama kali saat proklamasi.</div>
+            </div>
+            <div class="figure-card">
+              <div class="figure-name">Sayuti Melik</div>
+              <div class="figure-role">Pengetik Teks</div>
+              <div class="figure-desc">Mengetik naskah final proklamasi dari tulisan tangan Soekarno.</div>
+            </div>
+            <div class="figure-card">
+              <div class="figure-name">Sukarni</div>
+              <div class="figure-role">Pemimpin Golongan Muda</div>
+              <div class="figure-desc">Menginisiasi pembawaan Soekarno-Hatta ke Rengasdengklok.</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="section" id="bab4-s4">
+          <h3>Makna dan Signifikansi Proklamasi</h3>
+
+          <div class="box">
+            <div class="box-title">Makna Proklamasi dari Berbagai Aspek</div>
+            <p><strong>Politik:</strong> Indonesia menjadi negara merdeka dan berdaulat; rakyat Indonesia berhak menentukan nasib sendiri.</p>
+            <p><strong>Hukum:</strong> Tata hukum colonial dihapus dan diganti dengan tata hukum nasional Indonesia.</p>
+            <p><strong>Sosial:</strong> Hilangnya diskriminasi sosial berbasis ras/warna kulit yang diberlakukan penjajah.</p>
+            <p><strong>Budaya:</strong> Lahirnya kebudayaan nasional yang bebas dari dominasi budaya penjajah.</p>
+          </div>
+
+          <h4>Sidang PPKI Pasca-Proklamasi</h4>
+          <div class="timeline">
+            <div class="timeline-item">
+              <div class="timeline-year">18 Agt 1945</div>
+              <div class="timeline-dot"></div>
+              <div class="timeline-content"><strong>Sidang PPKI Pertama</strong><p>Mengesahkan UUD 1945, memilih Soekarno sebagai Presiden dan Hatta sebagai Wakil Presiden, membentuk KNIP (Komite Nasional Indonesia Pusat).</p></div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-year">19 Agt 1945</div>
+              <div class="timeline-dot"></div>
+              <div class="timeline-content"><strong>Sidang PPKI Kedua</strong><p>Membentuk 12 departemen/kementerian, menetapkan 8 provinsi beserta gubernurnya.</p></div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-year">22 Agt 1945</div>
+              <div class="timeline-dot"></div>
+              <div class="timeline-content"><strong>Sidang PPKI Ketiga</strong><p>Membentuk Komite Nasional, BKR (Badan Keamanan Rakyat), dan PNI sebagai partai tunggal (namun segera dibatalkan).</p></div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- BAB 5 -->
+    <div class="chapter" id="chapter-5">
+      <div class="chapter-hero" data-num="V">
+        <span class="chapter-label">BAB V — Semester 2</span>
+        <div class="semester-tag sem2">Semester Genap</div>
+        <h2>Kehidupan Awal Kemerdekaan &amp; Demokrasi Liberal</h2>
+        <p class="chapter-intro">Dari membangun fondasi negara baru hingga masa kabinet yang berganti-ganti dalam era Demokrasi Liberal 1950–1959.</p>
+      </div>
+      <div class="chapter-body">
+
+        <div class="section" id="bab5-s1">
+          <h3>Pembentukan Lembaga-Lembaga Negara</h3>
+          <p>Segera setelah proklamasi, pemerintah baru bekerja keras membangun struktur negara dari nol, di tengah ancaman Belanda yang ingin kembali berkuasa.</p>
+
+          <h4>Pembentukan Angkatan Bersenjata</h4>
+          <ul class="styled-list">
+            <li><strong>BKR (Badan Keamanan Rakyat)</strong> — 22 Agustus 1945, bukan tentara resmi melainkan badan keamanan.</li>
+            <li><strong>TKR (Tentara Keamanan Rakyat)</strong> — 5 Oktober 1945 (kini diperingati sebagai HUT TNI). Dibentuk karena situasi keamanan makin mengkhawatirkan.</li>
+            <li>Kemudian berganti nama: TRI (Tentara Republik Indonesia) → <strong>TNI (Tentara Nasional Indonesia)</strong> — 3 Juni 1947.</li>
+          </ul>
+
+          <h4>Pembentukan Partai Politik</h4>
+          <p>Maklumat Wakil Presiden No. X (3 November 1945) membuka kebebasan mendirikan partai politik. Hasilnya, puluhan partai bermunculan, mencerminkan pluralisme ideologi bangsa Indonesia.</p>
+          <div class="box">
+            <div class="box-title">Partai-Partai Utama Era Awal Kemerdekaan</div>
+            <p><strong>PNI</strong> — Partai Nasional Indonesia (nasionalis)</p>
+            <p><strong>Masyumi</strong> — Islam modernis</p>
+            <p><strong>NU</strong> — Nahdlatul Ulama (Islam tradisionalis)</p>
+            <p><strong>PKI</strong> — Partai Komunis Indonesia</p>
+            <p><strong>PSI</strong> — Partai Sosialis Indonesia</p>
+          </div>
+        </div>
+
+        <div class="section" id="bab5-s2">
+          <h3>Demokrasi Liberal 1950–1959</h3>
+          <p>Setelah pengakuan kedaulatan Desember 1949, Indonesia resmi berbentuk negara kesatuan (NKRI) pada 17 Agustus 1950, dengan konstitusi sementara (UUDS 1950). Sistem pemerintahan berubah menjadi <strong>parlementer</strong> — kabinet bertanggung jawab kepada parlemen (DPR), bukan presiden.</p>
+
+          <div class="box red">
+            <div class="box-title">Kelemahan Sistem Parlementer Era Ini</div>
+            <p>Tidak ada partai dengan suara mayoritas → koalisi yang rapuh → kabinet mudah dijatuhkan mosi tidak percaya → dalam 9 tahun (1950–1959) terdapat <strong>7 kabinet</strong>, rata-rata bertahan hanya ~15 bulan.</p>
+          </div>
+        </div>
+
+        <div class="section" id="bab5-s3">
+          <h3>Kondisi Ekonomi Awal Kemerdekaan</h3>
+          <p>Warisan penjajahan meninggalkan ekonomi yang carut-marut: inflasi tinggi, infrastruktur rusak, dan ketergantungan pada ekspor bahan mentah. Berbagai kebijakan dicoba untuk memperbaiki kondisi ini.</p>
+
+          <div class="table-wrap">
+            <table>
+              <thead><tr><th>Program/Kebijakan</th><th>Penggagas</th><th>Isi</th><th>Hasil</th></tr></thead>
+              <tbody>
+                <tr><td>Gunting Syafruddin (1950)</td><td>Sri Sultan Hamengkubuwono IX / Syafruddin Prawiranegara</td><td>Memotong nilai uang beredar menjadi setengah untuk mengurangi inflasi</td><td>Berhasil memotong inflasi tapi merugikan rakyat kecil</td></tr>
+                <tr><td>Program Benteng (1950)</td><td>Kabinet Natsir</td><td>Memberi kredit dan fasilitas kepada pengusaha pribumi agar bisa bersaing dengan Cina dan Belanda</td><td>Banyak diselewengkan, gagal</td></tr>
+                <tr><td>Nasionalisasi De Javasche Bank (1951)</td><td>Kabinet Sukiman</td><td>Mengubah bank kolonial Belanda menjadi Bank Indonesia</td><td>Berhasil, BI menjadi bank sentral</td></tr>
+                <tr><td>Sistem Ekonomi Ali-Baba (1954)</td><td>Ali Sastroamidjojo</td><td>Kerja sama pengusaha pribumi (Ali) dengan pengusaha Tionghoa (Baba)</td><td>Kurang berhasil</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="section" id="bab5-s4">
+          <h3>Kabinet-Kabinet Demokrasi Liberal</h3>
+
+          <div class="timeline">
+            <div class="timeline-item">
+              <div class="timeline-year">1950–51</div>
+              <div class="timeline-dot"></div>
+              <div class="timeline-content"><strong>Kabinet Natsir (Masyumi)</strong><p>Program Benteng, perundingan Irian Barat. Jatuh karena mosi DPR terkait Irian Barat.</p></div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-year">1951–52</div>
+              <div class="timeline-dot"></div>
+              <div class="timeline-content"><strong>Kabinet Sukiman (Masyumi-PNI)</strong><p>Nasionalisasi De Javasche Bank. Jatuh karena menandatangani MSA (bantuan AS) yang dianggap memihak Barat.</p></div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-year">1952–53</div>
+              <div class="timeline-dot"></div>
+              <div class="timeline-content"><strong>Kabinet Wilopo (PNI)</strong><p>Program penghematan. Jatuh karena Peristiwa 17 Oktober 1952 (tuntutan TNI AD) dan Peristiwa Tanjung Morawa.</p></div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-year">1953–55</div>
+              <div class="timeline-dot"></div>
+              <div class="timeline-content"><strong>Kabinet Ali Sastroamidjojo I (PNI)</strong><p>Mempersiapkan <em>Konferensi Asia Afrika Bandung 1955</em>. Kabinet terlama (hampir 2 tahun).</p></div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-year">1955</div>
+              <div class="timeline-dot"></div>
+              <div class="timeline-content"><strong>Pemilu Pertama 1955</strong><p>Pemilu legislatif (September) dan Konstituante (Desember). Empat partai besar: PNI, Masyumi, NU, PKI. Pemilu paling demokratis dalam sejarah Indonesia hingga 1999.</p></div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-year">1955–56</div>
+              <div class="timeline-dot"></div>
+              <div class="timeline-content"><strong>Kabinet Burhanuddin Harahap (Masyumi)</strong><p>Menyelenggarakan Pemilu 1955. Terkenal karena korupsi berhasil ditekan. Singkat tapi efektif.</p></div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-year">1956–57</div>
+              <div class="timeline-dot"></div>
+              <div class="timeline-content"><strong>Kabinet Ali II (PNI-NU-Masyumi)</strong><p>Munculnya gerakan daerah (PRRI/Permesta). Jatuh karena krisis daerah.</p></div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-year">1957–59</div>
+              <div class="timeline-dot"></div>
+              <div class="timeline-content"><strong>Kabinet Djuanda</strong><p>Kabinet "zaken kabinet" (kabinet ahli tanpa afiliasi partai). Mengeluarkan <em>Deklarasi Djuanda 1957</em> tentang wilayah perairan Indonesia. Berlangsung hingga Dekrit Presiden 5 Juli 1959.</p></div>
+            </div>
+          </div>
+
+          <div class="box">
+            <div class="box-title">Konferensi Asia Afrika Bandung 1955</div>
+            <p>Kabinet Ali I berhasil menyelenggarakan KAA di Bandung, 18–24 April 1955 — pertemuan 29 negara Asia dan Afrika yang baru merdeka. Menghasilkan <strong>Dasasila Bandung</strong> dan menandai lahirnya Gerakan Non-Blok. Hatta dan Soekarno memimpin diplomasi internasional Indonesia di puncak kejayaannya.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- BAB 6 -->
+    <div class="chapter" id="chapter-6">
+      <div class="chapter-hero" data-num="VI">
+        <span class="chapter-label">BAB VI — Semester 2</span>
+        <div class="semester-tag sem2">Semester Genap</div>
+        <h2>Demokrasi Terpimpin</h2>
+        <p class="chapter-intro">Ketika demokrasi liberal dianggap gagal, Soekarno mencanangkan konsep baru — Demokrasi Terpimpin — yang membawa Indonesia ke era satu suara, satu pemimpin.</p>
+      </div>
+      <div class="chapter-body">
+
+        <div class="section" id="bab6-s1">
+          <h3>Dekrit Presiden 5 Juli 1959</h3>
+          <p>Konstituante (badan pembuat konstitusi hasil Pemilu 1955) gagal merumuskan UUD baru setelah bermusyawarah selama 3 tahun. Soekarno menganggap sistem Demokrasi Liberal gagal karena ketidakstabilan kabinet dan perpecahan partai.</p>
+
+          <div class="box">
+            <div class="box-title">Isi Dekrit Presiden 5 Juli 1959</div>
+            <p><strong>1.</strong> Membubarkan Konstituante.</p>
+            <p><strong>2.</strong> Menetapkan berlakunya kembali UUD 1945 dan tidak berlakunya UUDS 1950.</p>
+            <p><strong>3.</strong> Pembentukan MPRS (Majelis Permusyawaratan Rakyat Sementara) dan DPAS (Dewan Pertimbangan Agung Sementara).</p>
+          </div>
+
+          <p>Dekrit ini disambut dukungan luas dari rakyat, TNI AD, dan PKI. Namun secara konstitusional, ini merupakan tindakan inkonstitusional karena presiden tidak berwenang membubarkan Konstituante menurut UUDS 1950.</p>
+        </div>
+
+        <div class="section" id="bab6-s2">
+          <h3>Sistem Politik Demokrasi Terpimpin</h3>
+
+          <h4>Konsep Nasakom</h4>
+          <p>Soekarno menciptakan formula persatuan nasional: <strong>NASAKOM</strong> — <em>Na</em>sionalisme, <em>Aga</em>ma, Ko<em>m</em>unisme. Tiga kekuatan besar ini harus bersatu dalam satu wadah revolusi. PKI yang komunis berada dalam satu barisan dengan Masyumi yang Islam — sebuah formula yang paradoksal dan tidak bertahan lama.</p>
+
+          <h4>Lembaga-Lembaga Era Demokrasi Terpimpin</h4>
+          <div class="table-wrap">
+            <table>
+              <thead><tr><th>Lembaga</th><th>Keterangan</th></tr></thead>
+              <tbody>
+                <tr><td>MPRS</td><td>Anggota ditunjuk langsung oleh Presiden, bukan dipilih. Menetapkan Soekarno sebagai Presiden Seumur Hidup (1963) — inkonstitusional.</td></tr>
+                <tr><td>DPR-GR (Gotong Royong)</td><td>DPR hasil pemilu 1955 dibubarkan, diganti DPR-GR yang anggotanya ditunjuk Presiden.</td></tr>
+                <tr><td>Kabinet Kerja</td><td>Soekarno menjadi Perdana Menteri sekaligus Presiden (melanggar UUD 1945).</td></tr>
+                <tr><td>Front Nasional</td><td>Wadah mobilisasi massa untuk mendukung program revolusi Soekarno.</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="box red">
+            <div class="box-title">Penyimpangan dari UUD 1945</div>
+            <p>• Presiden merangkap Perdana Menteri (tidak diatur UUD 1945).</p>
+            <p>• Soekarno diangkat Presiden Seumur Hidup — bertentangan dengan UUD 1945 yang membatasi masa jabatan.</p>
+            <p>• DPR dibubarkan ketika menolak RAPBN yang diajukan Presiden (1960).</p>
+            <p>• Partai Masyumi dan PSI dibubarkan (1960) karena dianggap terlibat PRRI/Permesta.</p>
+          </div>
+        </div>
+
+        <div class="section" id="bab6-s3">
+          <h3>Ekonomi Masa Demokrasi Terpimpin</h3>
+          <p>Soekarno lebih fokus pada politik dan konfrontasi daripada ekonomi. Kondisi ekonomi justru memburuk parah di era ini.</p>
+
+          <div class="box red">
+            <div class="box-title">Masalah Ekonomi Era Terpimpin</div>
+            <p><strong>Inflasi:</strong> Melonjak hingga ratusan persen. Pemerintah mencetak uang tanpa batas untuk membiayai proyek-proyek mercusuar.</p>
+            <p><strong>Proyek Mercusuar:</strong> Membangun Monumen Nasional (Monas), kompleks olahraga Senayan (untuk Asian Games 1962), dan Jembatan Semanggi — semua demi gengsi internasional di tengah rakyat yang kelaparan.</p>
+            <p><strong>Devaluasi:</strong> Uang 1.000 rupiah diganti 1 rupiah (1965) — menghancurkan tabungan rakyat.</p>
+          </div>
+
+          <h4>Konfrontasi dengan Malaysia</h4>
+          <p>Soekarno menolak pembentukan Malaysia (1963) dan mencanangkan <strong>"Ganyang Malaysia"</strong>. Indonesia keluar dari PBB (20 Januari 1965) — satu-satunya negara yang pernah keluar dari PBB. Konfrontasi ini menguras sumber daya dan mengisolasi Indonesia dari ekonomi dunia.</p>
+        </div>
+
+        <div class="section" id="bab6-s4">
+          <h3>G30S/PKI 1965 dan Runtuhnya Demokrasi Terpimpin</h3>
+
+          <h4>Peristiwa G30S/PKI</h4>
+          <p>Pada malam <strong>30 September menuju 1 Oktober 1965</strong>, sekelompok militer yang menamakan diri <em>Gerakan 30 September</em> (G30S) menculik dan membunuh <strong>6 Jenderal TNI Angkatan Darat</strong> dan 1 perwira, lalu melempar jenazah ke sebuah sumur di <strong>Lubang Buaya, Jakarta</strong>.</p>
+
+          <div class="box">
+            <div class="box-title">Para Pahlawan Revolusi (Korban G30S)</div>
+            <p>1. Jenderal Ahmad Yani | 2. Mayjen Soeprapto | 3. Mayjen S. Parman | 4. Mayjen M.T. Haryono | 5. Brigjen Pandjaitan | 6. Brigjen Sutoyo Siswomiharjo | 7. Lettu Pierre Tendean (ajudan)</p>
+          </div>
+
+          <p>Gerakan ini diklaim menculik para jenderal "Dewan Jenderal" yang konon berencana menggulingkan Soekarno. PKI diduga terlibat atau mendalangi gerakan ini, meski perdebatan historiografi masih berlangsung.</p>
+
+          <h4>Penumpasan oleh Soeharto</h4>
+          <p>Mayor Jenderal <strong>Soeharto</strong> (Pangkostrad) memimpin penumpasan G30S dalam waktu singkat. PKI dinyatakan terlarang, ratusan ribu anggota dan simpatisan PKI dibunuh atau dipenjara tanpa pengadilan dalam tragedi kemanusiaan besar.</p>
+
+          <h4>Supersemar dan Peralihan Kekuasaan</h4>
+          <p>Soekarno mengeluarkan <strong>Surat Perintah 11 Maret 1966 (Supersemar)</strong> yang memberikan mandat kepada Soeharto untuk mengambil langkah-langkah yang dianggap perlu guna memulihkan keamanan. Soeharto menafsirkan ini sebagai transfer kekuasaan penuh. Inilah awal <strong>Orde Baru</strong>.</p>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- BAB 7 -->
+    <div class="chapter" id="chapter-7">
+      <div class="chapter-hero" data-num="VII">
+        <span class="chapter-label">BAB VII — Semester 2</span>
+        <div class="semester-tag sem2">Semester Genap</div>
+        <h2>Perjuangan Fisik Mempertahankan Kemerdekaan</h2>
+        <p class="chapter-intro">Kemerdekaan yang diproklamasikan harus dipertahankan dengan darah dan nyawa — dari Surabaya hingga Bandung, dari Medan hingga Bali.</p>
+      </div>
+      <div class="chapter-body">
+
+        <div class="section" id="bab7-s1">
+          <h3>Kembalinya Sekutu dan NICA</h3>
+          <p>Setelah Jepang menyerah kepada Sekutu (Agustus 1945), pasukan Sekutu (Inggris) datang ke Indonesia dengan tugas melucuti senjata Jepang. Namun mereka datang bersama <strong>NICA (Netherlands Indies Civil Administration)</strong> — bayangan pemerintah Belanda yang ingin merebut kembali Indonesia.</p>
+
+          <div class="box red">
+            <div class="box-title">Konflik dengan Sekutu dan NICA</div>
+            <p>Rakyat Indonesia curiga karena NICA ikut bersama Sekutu. Ketegangan meledak menjadi konflik bersenjata di berbagai kota besar Indonesia.</p>
+          </div>
+        </div>
+
+        <div class="section" id="bab7-s2">
+          <h3>Pertempuran-Pertempuran Besar</h3>
+
+          <div class="table-wrap">
+            <table>
+              <thead><tr><th>Pertempuran</th><th>Tempat</th><th>Tanggal</th><th>Tokoh</th><th>Makna</th></tr></thead>
+              <tbody>
+                <tr><td><strong>Pertempuran Surabaya</strong></td><td>Surabaya</td><td>10 Nov 1945</td><td>Bung Tomo</td><td>Pertempuran terbesar dan terberdarah. Kematian Jenderal Mallaby. Diperingati sbg Hari Pahlawan.</td></tr>
+                <tr><td><strong>Bandung Lautan Api</strong></td><td>Bandung</td><td>23 Mar 1946</td><td>Colonel A.H. Nasution</td><td>Rakyat membakar Bandung Selatan daripada diserahkan kepada Sekutu. "Lebih baik hancur daripada dijajah kembali."</td></tr>
+                <tr><td><strong>Pertempuran Medan Area</strong></td><td>Medan</td><td>Okt 1945</td><td>Achmad Tahir</td><td>Perlawanan terhadap pasukan Gurkha Inggris dan NICA di Sumatera Utara.</td></tr>
+                <tr><td><strong>Pertempuran Margarana</strong></td><td>Bali</td><td>20 Nov 1946</td><td>I Gusti Ngurah Rai</td><td>Puputan — 96 pejuang Bali bertempur sampai gugur melawan Belanda yang jauh lebih besar.</td></tr>
+                <tr><td><strong>Palagan Ambarawa</strong></td><td>Ambarawa, Jateng</td><td>Nov–Des 1945</td><td>Kol. Sudirman</td><td>Kemenangan Indonesia; Soedirman diangkat Panglima Besar TKR. Diperingati sbg Hari Infanteri.</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="box">
+            <div class="box-title">Pertempuran Surabaya — 10 November 1945</div>
+            <p>Pemicunya: Pembunuhan Jenderal Mallaby (Inggris) pada 30 Oktober 1945. Inggris memberi ultimatum agar arek-arek Suroboyo menyerahkan senjata sebelum 10 November pukul 06.00.</p>
+            <p>Rakyat menolak. Pertempuran dahsyat berlangsung selama 3 minggu. Bung Tomo membakar semangat lewat radio: <em>"Bismillahirrahmanirrahim... Merdeka! Merdeka! Merdeka!"</em></p>
+            <p>Ribuan pejuang gugur, namun semangat perlawanan mengguncang dunia internasional.</p>
+          </div>
+        </div>
+
+        <div class="section" id="bab7-s3">
+          <h3>Agresi Militer Belanda I dan II</h3>
+
+          <h4>Agresi Militer Belanda I (21 Juli – 5 Agustus 1947)</h4>
+          <p>Belanda melancarkan "aksi polisionil" berskala besar dengan alasan pemerintah RI melanggar Perjanjian Linggarjati. Belanda berhasil merebut wilayah-wilayah ekonomi penting: perkebunan Jawa Timur, Sumatera, dan pelabuhan-pelabuhan.</p>
+
+          <p>Dunia internasional bereaksi keras. <strong>India dan Australia</strong> membawa masalah ini ke Dewan Keamanan PBB. Belanda terpaksa menghentikan agresi dan setuju gencatan senjata.</p>
+
+          <h4>Agresi Militer Belanda II (19 Desember 1948)</h4>
+          <p>Belanda kembali melancarkan serangan besar-besaran, kali ini menargetkan ibu kota republik di Yogyakarta. Soekarno dan Hatta berhasil ditangkap dan diasingkan ke Bangka dan Brastagi.</p>
+
+          <p>Namun TNI tidak lumpuh. <strong>Panglima Jenderal Soedirman</strong> — meski dalam kondisi sakit TBC parah — memimpin <strong>Perang Gerilya</strong> dari hutan-hutan selama 7 bulan, berpindah-pindah di Jawa. Strategi gerilya ini terbukti efektif menguras moral pasukan Belanda.</p>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- BAB 8 -->
+    <div class="chapter" id="chapter-8">
+      <div class="chapter-hero" data-num="VIII">
+        <span class="chapter-label">BAB VIII — Semester 2</span>
+        <div class="semester-tag sem2">Semester Genap</div>
+        <h2>Perjuangan Diplomasi</h2>
+        <p class="chapter-intro">Di meja perundingan, di lorong-lorong PBB, dan di lapangan diplomatik — Indonesia berjuang untuk mendapatkan pengakuan dunia atas kemerdekaannya.</p>
+      </div>
+      <div class="chapter-body">
+
+        <div class="section" id="bab8-s1">
+          <h3>Perundingan Linggarjati (1946)</h3>
+          <p>Diinisiasi oleh Inggris (Lord Killearn) sebagai mediator, perundingan berlangsung di <strong>Linggarjati, Kuningan, Jawa Barat</strong>.</p>
+
+          <div class="box">
+            <div class="box-title">Isi Perjanjian Linggarjati (15 November 1946)</div>
+            <p><strong>1.</strong> Belanda mengakui secara de facto kekuasaan RI atas <em>Jawa, Madura, dan Sumatera</em>.</p>
+            <p><strong>2.</strong> RI dan Belanda akan membentuk Negara Indonesia Serikat (NIS).</p>
+            <p><strong>3.</strong> NIS dan Belanda akan membentuk Uni Indonesia-Belanda di bawah Ratu Belanda.</p>
+          </div>
+
+          <div class="box red">
+            <div class="box-title">Dampak dan Kontroversi</div>
+            <p>Banyak pihak Indonesia menentang Linggarjati karena dianggap menyerahkan wilayah yang bukan milik Belanda. Namun pemerintah RI menerimanya sebagai langkah pragmatis. Belanda sendiri kemudian melanggar perjanjian dengan melancarkan Agresi Militer I.</p>
+          </div>
+        </div>
+
+        <div class="section" id="bab8-s2">
+          <h3>Perundingan Renville (1948)</h3>
+          <p>Setelah Agresi Militer I, PBB membentuk <strong>Komisi Tiga Negara (KTN)</strong>: Amerika Serikat, Belgia, dan Australia sebagai mediator. Perundingan berlangsung di atas kapal perang USS Renville milik Amerika di perairan Jakarta.</p>
+
+          <div class="box">
+            <div class="box-title">Isi Perjanjian Renville (17 Januari 1948)</div>
+            <p><strong>1.</strong> Gencatan senjata di sepanjang "Garis Van Mook" (garis demarkasi hasil Agresi Militer I).</p>
+            <p><strong>2.</strong> RI hanya menguasai wilayah yang lebih sempit dari sebelum Agresi Militer I.</p>
+            <p><strong>3.</strong> RI mengakui kedaulatan Belanda atas daerah-daerah yang telah diduduki Belanda.</p>
+          </div>
+
+          <p>Renville sangat merugikan Indonesia — wilayah RI menyusut, dan TNI harus menarik diri ke wilayah RI. Pasukan Siliwangi melakukan <em>long march</em> dari Jawa Barat ke Jawa Tengah. Kabinet Amir Syarifuddin jatuh karena perjanjian ini dianggap terlalu merugikan.</p>
+        </div>
+
+        <div class="section" id="bab8-s3">
+          <h3>Serangan Umum 1 Maret 1949</h3>
+          <p>Setelah Agresi Militer II, Yogyakarta diduduki Belanda. Untuk membuktikan kepada dunia bahwa Indonesia masih ada dan mampu melawan, Panglima Soedirman dan Sultan Hamengkubuwono IX merencanakan serangan besar ke Yogyakarta.</p>
+
+          <div class="box">
+            <div class="box-title">Serangan Umum 1 Maret 1949</div>
+            <p>Dipimpin oleh <strong>Letkol Soeharto</strong> (Komandan Brigade X), pasukan TNI menyerbu dan berhasil menduduki Yogyakarta selama <strong>6 jam</strong> (pukul 06.00–12.00).</p>
+            <p>Misi ini berhasil: dunia internasional melihat bahwa RI masih memiliki angkatan bersenjata yang kuat. Serangan ini memperkuat posisi Indonesia dalam perundingan diplomatik di PBB.</p>
+          </div>
+
+          <h4>Perundingan Roem-Royen (1949)</h4>
+          <p>Tekanan PBB dan dunia internasional memaksa Belanda duduk di meja perundingan lagi. Diwakili <strong>Moh. Roem</strong> (Indonesia) dan <strong>Van Royen</strong> (Belanda).</p>
+          <div class="box">
+            <div class="box-title">Isi Perjanjian Roem-Royen (7 Mei 1949)</div>
+            <p>• Belanda menghentikan operasi militer dan membebaskan semua tahanan politik (termasuk Soekarno-Hatta).</p>
+            <p>• Pemerintah RI kembali ke Yogyakarta.</p>
+            <p>• TNI menghentikan gerilya.</p>
+            <p>• Kedua pihak sepakat mengikuti Konferensi Meja Bundar.</p>
+          </div>
+        </div>
+
+        <div class="section" id="bab8-s4">
+          <h3>KMB dan Pengakuan Kedaulatan</h3>
+
+          <h4>Konferensi Meja Bundar (KMB)</h4>
+          <p>Berlangsung di <strong>Den Haag, Belanda</strong>, 23 Agustus – 2 November 1949. Delegasi Indonesia dipimpin <strong>Mohammad Hatta</strong>.</p>
+
+          <div class="box">
+            <div class="box-title">Hasil KMB</div>
+            <p><strong>1.</strong> Belanda mengakui kedaulatan Republik Indonesia Serikat (RIS) paling lambat 30 Desember 1949.</p>
+            <p><strong>2.</strong> Masalah Irian Barat akan diselesaikan dalam waktu satu tahun setelah pengakuan kedaulatan (namun ini tidak terpenuhi dan menjadi sumber konflik panjang).</p>
+            <p><strong>3.</strong> RIS menanggung utang Belanda sejumlah 4,3 miliar gulden.</p>
+            <p><strong>4.</strong> Pembentukan Uni Indonesia-Belanda yang bersifat longgar.</p>
+          </div>
+
+          <h4>27 Desember 1949 — Pengakuan Kedaulatan</h4>
+          <p>Belanda secara resmi menyerahkan kedaulatan kepada RIS. Di Amsterdam, Ratu Juliana menyerahkan dokumen kepada Hatta. Di Jakarta, upacara penurunan bendera Belanda dan pengibaran bendera RIS berlangsung khidmat.</p>
+
+          <div class="box blue">
+            <div class="box-title">Paradoks KMB</div>
+            <p>Indonesia mendapat kedaulatan, tapi dalam bentuk RIS (federal) yang dianggap rekayasa Belanda untuk melemahkan RI. Rakyat Indonesia menginginkan negara kesatuan. Maka pada <strong>17 Agustus 1950</strong>, RIS dibubarkan dan Indonesia kembali menjadi Negara Kesatuan Republik Indonesia (NKRI).</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- BAB 9 -->
+    <div class="chapter" id="chapter-9">
+      <div class="chapter-hero" data-num="IX">
+        <span class="chapter-label">BAB IX — Semester 2</span>
+        <div class="semester-tag sem2">Semester Genap</div>
+        <h2>Integrasi untuk Kedaulatan Sebuah Negara</h2>
+        <p class="chapter-intro">Setelah merdeka, tantangan terbesar adalah menjaga keutuhan — dari pemberontakan dalam negeri hingga perjuangan panjang merebut Irian Barat.</p>
+      </div>
+      <div class="chapter-body">
+
+        <div class="section" id="bab9-s1">
+          <h3>Dari RIS ke NKRI</h3>
+          <p>RIS (Republik Indonesia Serikat) terdiri dari 16 negara bagian hasil rekayasa Belanda melalui "Divide and Rule" — termasuk Negara Pasundan, Negara Indonesia Timur, Negara Sumatera Timur, dan lain-lain.</p>
+
+          <p>Rakyat Indonesia menolak bentuk federal ini. Satu per satu, negara bagian bergabung (menggabungkan diri) dengan Republik Indonesia. Pada <strong>17 Agustus 1950</strong>, RIS resmi dibubarkan dan Indonesia kembali menjadi <strong>Negara Kesatuan Republik Indonesia (NKRI)</strong> dengan UUDS 1950 sebagai konstitusinya.</p>
+
+          <div class="box">
+            <div class="box-title">Makna Kembali ke NKRI</div>
+            <p>Kembalinya ke bentuk negara kesatuan merupakan kemenangan besar rakyat Indonesia atas strategi federalisasi Belanda. Ini membuktikan keinginan kuat rakyat untuk bersatu dalam satu negara Indonesia yang utuh.</p>
+          </div>
+        </div>
+
+        <div class="section" id="bab9-s2">
+          <h3>Pemberontakan Dalam Negeri</h3>
+          <p>Integrasi nasional terancam oleh berbagai pemberontakan dari dalam negeri yang dipicu ketidakpuasan terhadap pemerintah pusat, ideologi, atau kepentingan daerah.</p>
+
+          <div class="table-wrap">
+            <table>
+              <thead><tr><th>Pemberontakan</th><th>Tahun</th><th>Tokoh</th><th>Daerah</th><th>Latar Belakang</th><th>Penyelesaian</th></tr></thead>
+              <tbody>
+                <tr><td><strong>PKI Madiun</strong></td><td>1948</td><td>Muso, Amir Syarifuddin</td><td>Madiun, Jawa Timur</td><td>PKI ingin mendirikan negara komunis, tidak puas dengan Perjanjian Renville</td><td>Ditumpas TNI di bawah Soedirman; Muso tewas, Amir Syarifuddin ditangkap dan dihukum mati</td></tr>
+                <tr><td><strong>DI/TII Jawa Barat</strong></td><td>1949–1962</td><td>S.M. Kartosuwiryo</td><td>Jawa Barat</td><td>Ingin mendirikan Negara Islam Indonesia (NII)</td><td>Kartosuwiryo ditangkap 1962, dihukum mati</td></tr>
+                <tr><td><strong>DI/TII Jawa Tengah</strong></td><td>1950–1954</td><td>Amir Fatah</td><td>Brebes, Tegal</td><td>Bergabung dengan DI/TII Kartosuwiryo</td><td>Ditumpas militer</td></tr>
+                <tr><td><strong>DI/TII Aceh</strong></td><td>1953–1962</td><td>Daud Beureu'eh</td><td>Aceh</td><td>Kecewa Aceh dijadikan bagian Sumatera Utara, ingin otonomi dan syariat Islam</td><td>Diselesaikan secara damai; Aceh diberi otonomi khusus (1959)</td></tr>
+                <tr><td><strong>DI/TII Sulawesi Selatan</strong></td><td>1950–1965</td><td>Kahar Muzakkar</td><td>Sulawesi Selatan</td><td>Kecewa mantan gerilyawan tidak diakui sebagai tentara reguler</td><td>Kahar Muzakkar tewas 1965</td></tr>
+                <tr><td><strong>PRRI/Permesta</strong></td><td>1958–1961</td><td>Syafruddin Prawiranegara (PRRI), Ventje Sumual (Permesta)</td><td>Sumatera & Sulawesi</td><td>Ketidakpuasan daerah terhadap sentralisasi kekuasaan dan ketimpangan pembangunan</td><td>Operasi militer gabungan; mendapat amnesti 1961</td></tr>
+                <tr><td><strong>RMS</strong></td><td>1950</td><td>Dr. Christian Soumokil</td><td>Maluku</td><td>Ingin memisahkan diri membentuk Republik Maluku Selatan</td><td>Ditumpas TNI; Soumokil ditangkap 1963, dihukum mati</td></tr>
+                <tr><td><strong>APRA</strong></td><td>1950</td><td>Kapten Raymond Westerling</td><td>Bandung</td><td>Eks tentara KNIL Belanda ingin mempertahankan Negara Pasundan</td><td>Ditumpas TNI; Westerling melarikan diri ke Belanda</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="box blue">
+            <div class="box-title">Pelajaran dari Pemberontakan-Pemberontakan Ini</div>
+            <p>Berbagai pemberontakan ini mengajarkan bahwa integrasi nasional bukan sesuatu yang otomatis terjadi. Diperlukan keadilan dalam pembangunan, pengakuan keberagaman, dan dialog antara pusat dan daerah. Beberapa pemberontakan diselesaikan secara militer, beberapa lainnya melalui amnesti dan negosiasi politik.</p>
+          </div>
+        </div>
+
+        <div class="section" id="bab9-s3">
+          <h3>Perjuangan Merebut Irian Barat</h3>
+          <p>Irian Barat (Papua bagian barat) tidak ikut diserahkan Belanda kepada Indonesia dalam KMB 1949. Belanda beralasan perlu waktu setahun untuk membahasnya, namun setelah setahun berlalu, Belanda tetap tidak mau menyerahkan Irian Barat.</p>
+
+          <h4>Latar Belakang</h4>
+          <p>Belanda ingin mempertahankan Irian Barat karena kaya sumber daya alam (emas, tembaga, minyak) dan sebagai "wajah" terakhir kehadiran Belanda di Asia.</p>
+
+          <h4>Perjuangan Diplomatik (1950–1962)</h4>
+          <div class="timeline">
+            <div class="timeline-item">
+              <div class="timeline-year">1950–54</div>
+              <div class="timeline-dot"></div>
+              <div class="timeline-content"><strong>Perundingan Bilateral Gagal</strong><p>Indonesia-Belanda berunding berulang kali, selalu gagal. Indonesia membawa ke PBB, namun resolusi tidak berhasil karena Barat mendukung Belanda.</p></div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-year">1956</div>
+              <div class="timeline-dot"></div>
+              <div class="timeline-content"><strong>Indonesia Menasionalisasi Perusahaan Belanda</strong><p>Sebagai tekanan, Indonesia mengambil alih perusahaan-perusahaan Belanda di Indonesia.</p></div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-year">1961</div>
+              <div class="timeline-dot"></div>
+              <div class="timeline-content"><strong>Pembentukan Trikora</strong><p>Soekarno mengeluarkan Tri Komando Rakyat (Trikora) pada 19 Desember 1961: gagalkan pembentukan "Papua Merdeka" oleh Belanda, kibarkan Merah Putih di Irian Barat, bersiap untuk mobilisasi umum.</p></div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-year">1962</div>
+              <div class="timeline-dot"></div>
+              <div class="timeline-content"><strong>Operasi Militer — Operasi Mandala</strong><p>Dipimpin Brigjen Soeharto. Indonesia mengirim pasukan ke Irian Barat. Amerika Serikat (khawatir Indonesia jatuh ke komunisme) menekan Belanda untuk berunding.</p></div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-year">15 Agt 1962</div>
+              <div class="timeline-dot"></div>
+              <div class="timeline-content"><strong>Perjanjian New York</strong><p>Belanda setuju menyerahkan Irian Barat kepada United Nations Temporary Executive Authority (UNTEA), yang kemudian menyerahkannya kepada Indonesia.</p></div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-year">1 Mei 1963</div>
+              <div class="timeline-dot"></div>
+              <div class="timeline-content"><strong>Irian Barat Resmi Bergabung dengan Indonesia</strong><p>UNTEA menyerahkan Irian Barat kepada Indonesia. Berganti nama menjadi Irian Jaya (kini Papua dan Papua Barat).</p></div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-year">1969</div>
+              <div class="timeline-dot"></div>
+              <div class="timeline-content"><strong>PEPERA (Penentuan Pendapat Rakyat)</strong><p>Sesuai Perjanjian New York, diadakan referendum. 1.025 orang perwakilan (bukan seluruh rakyat) memilih bergabung dengan Indonesia — menuai kontroversi hingga kini.</p></div>
+            </div>
+          </div>
+
+          <div class="box">
+            <div class="box-title">Ringkasan: Strategi Perjuangan Irian Barat</div>
+            <p><strong>1. Diplomasi bilateral</strong> — berunding langsung dengan Belanda (gagal).</p>
+            <p><strong>2. Diplomasi multilateral</strong> — melalui PBB (sebagian berhasil menciptakan tekanan).</p>
+            <p><strong>3. Konfrontasi ekonomi</strong> — nasionalisasi perusahaan Belanda (efektif menekan ekonomi Belanda).</p>
+            <p><strong>4. Konfrontasi militer</strong> — Trikora dan Operasi Mandala (berhasil memaksa Belanda berunding).</p>
+          </div>
+
+          <hr class="divider">
+
+          <div class="box blue">
+            <div class="box-title">Rangkuman Akhir: Benang Merah Sejarah Indonesia Kelas XI</div>
+            <p>Sejarah Indonesia kelas XI adalah kisah tentang <strong>perjuangan yang tak pernah berhenti</strong>: dari melawan kolonialisme dengan senjata, membangun kesadaran nasional melalui organisasi, merebut kemerdekaan dari Jepang, mempertahankan kemerdekaan dari Belanda, hingga menjaga keutuhan dari dalam.</p>
+            <p>Tiga tema besar yang menghubungkan semua bab:</p>
+            <p><strong>1. Perlawanan</strong> — terhadap segala bentuk penindasan, baik Belanda, Jepang, maupun pemberontak dalam negeri.</p>
+            <p><strong>2. Persatuan</strong> — dari Sumpah Pemuda hingga pembubaran RIS, Indonesia terus berjuang untuk bersatu.</p>
+            <p><strong>3. Kedaulatan</strong> — bukan hanya kemerdekaan de jure, tapi kedaulatan nyata atas seluruh wilayah dari Sabang sampai Merauke.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div><!-- end #content -->
+</main>
+
+<script>
+  let currentChapter = null;
+
+  function showHome() {
+    document.getElementById('home').classList.remove('hidden');
+    document.querySelectorAll('.chapter').forEach(c => c.classList.remove('active'));
+    document.querySelectorAll('.nav-chapter-btn').forEach(b => b.classList.remove('active'));
+    document.querySelectorAll('.nav-sub').forEach(s => s.classList.remove('open'));
+    document.querySelector('.nav-chapter-btn').classList.add('active');
+    currentChapter = null;
+    window.scrollTo(0, 0);
+    closeSidebar();
+  }
+
+  function openChapter(num) {
+    showChapter(num);
+    window.scrollTo(0, 0);
+  }
+
+  function toggleChapter(num) {
+    const sub = document.getElementById('sub-' + num);
+    const isOpen = sub.classList.contains('open');
+    // close all subs
+    document.querySelectorAll('.nav-sub').forEach(s => s.classList.remove('open'));
+    if (!isOpen) { sub.classList.add('open'); }
+    showChapter(num);
+  }
+
+  function showChapter(num) {
+    document.getElementById('home').classList.add('hidden');
+    document.querySelectorAll('.chapter').forEach(c => c.classList.remove('active'));
+    document.querySelectorAll('.nav-chapter-btn').forEach(b => b.classList.remove('active'));
+    const ch = document.getElementById('chapter-' + num);
+    if (ch) ch.classList.add('active');
+    const btns = document.querySelectorAll('.nav-chapter-btn');
+    if (btns[num]) btns[num].classList.add('active');
+    currentChapter = num;
+    document.getElementById('sub-' + num).classList.add('open');
+    window.scrollTo(0, 0);
+    closeSidebar();
+  }
+
+  function scrollToSection(id) {
+    const el = document.getElementById(id);
+    if (el) {
+      setTimeout(() => {
+        el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }, 100);
+    }
+    closeSidebar();
+  }
+
+  function toggleMenu() {
+    document.getElementById('sidebar').classList.toggle('open');
+  }
+
+  function closeSidebar() {
+    if (window.innerWidth <= 900) {
+      document.getElementById('sidebar').classList.remove('open');
+    }
+  }
+
+  // Close sidebar when clicking outside on mobile
+  document.getElementById('main').addEventListener('click', function() {
+    if (window.innerWidth <= 900) {
+      document.getElementById('sidebar').classList.remove('open');
+    }
+  });
+</script>
+</body>
+</html>
